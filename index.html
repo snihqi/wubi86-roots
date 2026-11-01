@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <!--
-  五笔字根练习 · 86 版  v1.0.19
+  五笔字根练习 · 86 版  v1.1.17
   作者：IHQI
 
   单文件、零依赖、零外链。双击即可离线使用。
 
-  数据来源与许可：
-  · 字根字形（303 个 SVG 路径）来自 sdcb/wubi86-viewer，
-    以 AGPL-3.0 授权：https://github.com/sdcb/wubi86-viewer
-  · 字根口诀为五笔 86 方案（王永民，1983），公有领域
-  · 键名汉字与一级简码属五笔方案本身的事实性内容
+  数据来源与许可（每条都核过原始出处，不是照抄别人的说法）：
+  · 字根字形：303 个 SVG 路径由 sdcb/wubi86-viewer 仓库里的字根字体
+    黑体字根.ttf（U+E000–E290 私用区）转出轮廓，合并为 path 指令。
+    上游仓库整体以 AGPL-3.0 发布：https://github.com/sdcb/wubi86-viewer
+  · 字根名称（含「青字头」「鱼头」这类非成字字根名）：同上仓库 root-names.json
+  · 口诀文字、五区配色（横红 · 竖橙 · 撇绿 · 点蓝 · 折紫）：同上仓库
+  · 字根口诀为五笔 86 方案（王永民，1983），属公有领域的事实性内容
+  · 键名汉字、一级简码同理，属五笔方案本身，不构成他人作品
+
+  未采用（上游另列的三项；本工具无对应功能，故不承担其许可义务）：
+  × 微软五笔词库 ChsWubiNew.lex —— 不查编码与候选顺序
+  × sdcb/search-wubi 拆解、识别码 —— 不拆字
+  × Make Me a Hanzi 笔画矢量（Arphic Public License）—— 不画笔画
+
+  字体出处（断点）：黑体字根.ttf 的 name 表无版权字段，只有 Version 1.00 / 2022-05-12。
+  已核对：OS/2 fsType=8（允许可编辑嵌入）、vendor `MS  `、带 fpgm/prep/cvt 提示程序、
+  upem 2048、690 个字形全映射在 PUA —— 属现成黑体子集化后重映射，来源上游未注明。
+  本项目分发的是字形轮廓数据，不是字体文件。权利人如有异议，改用自绘字形。
 
   许可：
   Copyright (C) 2026 IHQI
   本程序是自由软件：你可以依照自由软件基金会发布的 GNU Affero 通用公共许可证
   （第 3 版或你选择的任何更新版本）的条款重新分发和/或修改它。
+  AGPL 第 13 条要求：通过网络使用本程序的人，应能拿到它的源码。
+  本项目未做任何构建与压缩，这个 HTML 文件本身就是完整源码，
+  因此仓库 https://github.com/snihqi/wubi86-roots 即为源码提供处。
   分发时应附上 LICENSE 文件（AGPL-3.0 全文），并保留上述来源说明。
 -->
 
@@ -22,14 +38,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>五笔字根 · 86 版 v1.0.19</title>
+<title>五笔字根 · 86 版 v1.1.17</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%22.62%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23414E6B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23232A3A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20x%3D%220%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23C0504D%22%2F%3E%3Crect%20x%3D%226.4%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23D08A1E%22%2F%3E%3Crect%20x%3D%2212.8%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%233E9E67%22%2F%3E%3Crect%20x%3D%2219.2%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%234A7FC8%22%2F%3E%3Crect%20x%3D%2225.6%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%237B5DB5%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.16%2012.21V13.85H13.39L12.27%2019.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15%208.84H22.66V7.2H9.32V8.84H14.44L13.73%2012.21H10.16ZM13.97%2019.15%2015.09%2013.85H19.06V19.15H13.97Z%22%20fill%3D%22%23FAFBFE%22%2F%3E%3C%2Fsvg%3E">
 <meta name="description" content="五笔 86 版字根练习：303 个字根 + 25 个一级简码共 328 道题，按熟练度排队出题。单文件、离线可用、零外链，进度存在本地。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%2316181D%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223.4%22%20text-anchor%3D%22middle%22%20font-family%3D%22Songti%20SC%2CSTSong%2CSimSun%2Cserif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%3E%E4%BA%94%3C%2Ftext%3E%3C%2Fsvg%3E">
 <style>
   :root{
-    --bg:#F4F5F7; --card:#FFFFFF; --line:#E7E9EE; --ink:#16181D;
+    /* 亮度回到 v1.1.3 的水平（用户实测后觉得那版更清爽）。 */
+    --bg:#EAF0F8; --card:#FCFCFD; --line:#E5E8EF; --ink:#16181D;
+    /* 大字形专用色：比正文墨色浅一档、偏冷一点点。
+       112px 的黑字压在白卡上对比接近 18:1，长时间盯着边缘会发酸；
+       这个约 12:1，形状边界仍然干脆，但不刺眼。 */
+    --glyph:#2B3344;
+    /* ---------- 主题色板 ----------
+       全场只认一个主题蓝，进度条、选中态、可点项都用它；
+       其余颜色都是它的「冷色邻居」，只出现在「面板左边条」和「任务档位胶囊」上。
+       暖色一律不进 UI：金棕在浅底上会读成褐，红橙会和键盘的横/撇两区抢含义。 */
+    --accent:#5C82C6;        /* 主题蓝：两根进度条 / 菜单选中 / 积分面板 */
+    --accent-teal:#3E9E9A;   /* 青：任务履历面板 */
+    --accent-slate:#7A8798;  /* 石板灰：计分规则面板（最次要） */
+    --bar-task:var(--accent);
+    --bar-pt:var(--accent);
     --ink2:#5F6673; --ink3:#9AA1AE; --ink4:#C4C9D2;
-    --ok:#16A34A; --bad:#DC2626;
+    --ok:#16A34A;            /* 达标 / 可领取（键帽答对也用这个绿） */
+    --bad:#DC2626;
     /* 五区配色，取自 sdcb/wubi86-viewer：横红 · 竖橙 · 撇绿 · 点蓝 · 折紫。
        主色用于字根填充与键位字母，淡底用于键帽背景。 */
     --z1:#C0504D; --z1b:#FBEEED;
@@ -41,37 +73,50 @@
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
   body{
-    background:var(--bg); color:var(--ink);
+    /* 斜向极淡渐变：纯白大屏看久了发花，铺一层几乎看不出的冷灰蓝，
+       白色卡片反而有了「浮起来」的层次，也能压掉一部分眩光。 */
+    background:var(--bg);
+    background-image:linear-gradient(158deg, #EEF2F9 0%, #DEE5F0 100%);
+    background-attachment:fixed;
+    color:var(--ink);
     font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",-apple-system,sans-serif;
     -webkit-font-smoothing:antialiased;
     display:flex; flex-direction:column;
   }
   header{
-    height:60px; flex:0 0 60px; background:#fff; border-bottom:1px solid var(--line);
+    height:60px; flex:0 0 60px; background:var(--card); border-bottom:1px solid var(--line);
     display:flex; align-items:center; justify-content:space-between; padding:0 26px;
   }
   .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:16px}
   /* 图标是内联 SVG，不是位图：任意缩放都锐利，也没有外部素材。
-     黑底白「五」——「五」既是五笔的「五」，也是五个手指，比插图更贴题。 */
+     造型 = 墨蓝圆角块 + 白「五」+ 底部一条五色带。
+     · 「五」用苹方 Semibold 的**字形轮廓**（不是 <text>）——不依赖本机字体，
+       Windows 上打开也是同一个形状，不会因为缺字体变成别的样子。
+     · 底部五色带取的是键盘那五个区的颜色（横红 / 竖橙 / 撇绿 / 捺蓝 / 折紫），
+       所以「五」和「五区」在同一个符号里，不是随便配的彩虹条。
+     · 底色用墨蓝而不是纯黑：纯黑在浅色页面上像盖了个章，墨蓝和整页冷调更合。 */
   .logo{
     width:28px;height:28px;flex:none;display:block;
-    filter:drop-shadow(0 1px 1px rgba(16,24,40,.10));
+    filter:drop-shadow(0 2px 4px rgba(16,24,40,.16));
   }
   .logo svg{width:100%;height:100%;display:block}
   .hstats{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--ink2)}
   .hstats b{color:var(--ink);font-weight:600}
   .rankwrap{position:relative}
+  /* 胶囊原来靠 #F4F5F7 和背景拉开，底色一压暗两个色就贴住了，
+     看着像没渲染出来的字。改成和卡片同色 + 1px 描边，边界由描边负责。 */
   .rank{
     display:inline-flex;align-items:center;gap:6px;
-    background:#F4F5F7;border:none;border-radius:99px;padding:6px 12px;
+    background:var(--card);border:1px solid #D5DDEA;border-radius:99px;padding:6px 12px;
     font-size:12px;color:var(--ink);cursor:pointer;font-family:inherit;
+    transition:border-color .15s,background .15s;
   }
-  .rank:hover{background:#ECEEF2}
+  .rank:hover{background:#F0F4FA;border-color:#C6D0E2}
   .rank svg{opacity:.5;transition:transform .15s}
   .rank[aria-expanded="true"] svg{transform:rotate(180deg)}
   .rankmenu{
-    display:none;position:absolute;right:0;top:calc(100% + 8px);width:268px;
-    max-height:min(440px,72vh);overflow:auto;background:#fff;
+    display:none;position:absolute;right:0;top:calc(100% + 8px);width:300px;
+    max-height:min(440px,72vh);overflow:auto;background:var(--card);
     border:1px solid var(--line);border-radius:14px;padding:6px;z-index:60;
     box-shadow:0 4px 12px rgba(16,24,40,.06),0 18px 40px -10px rgba(16,24,40,.2);
   }
@@ -86,6 +131,13 @@
   }
   .rrow .need{font-family:Inter,sans-serif;font-size:11.5px;color:var(--ink3)}
   .rrow em{font-style:normal;font-family:Inter,sans-serif;font-size:9.5px;color:var(--ink3);display:inline-block;min-width:28px}
+  /* 品级 / 考试层级的小标签：跟在名字后面，淡底细字，不抢名字 */
+  .rrow .rtag{
+    font-style:normal;margin-left:7px;padding:1px 5px;border-radius:4px;
+    font-size:10px;color:var(--ink3);background:rgba(28,42,66,.055);
+    letter-spacing:.02em;
+  }
+  .rrow.cur .rtag{background:rgba(28,42,66,.09);color:var(--ink2)}
   .rrow:hover{background:#F7F8FA}
   .rrow.cur{background:#F1F3F6;color:var(--ink);font-weight:600}
   .rrow.cur .need{color:var(--ink2);font-weight:600}
@@ -109,20 +161,149 @@
   }
   .status b{color:var(--ink); font-weight:600; font-size:15px}
   .status .bar{flex:1}
+  /* ---------- 今日任务条 ----------
+     进度条原来是「已过一遍 / 共 328」，走满之后永久停在 100%，再没有反馈。
+     现在换成任务：四档共用一个今日计数，答对才加一，每天 6 点重置。 */
+  .status .ttot{white-space:nowrap}
+  .status .ttot b{font-family:Inter,sans-serif;font-size:15px}
+  .taskpick{position:relative;flex:none}
+  .taskbtn{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--card);border:1px solid #E1E4EA;border-radius:8px;padding:5px 10px;
+    font-size:12.5px;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap;
+    transition:border-color .15s,background .15s;
+  }
+  .taskbtn:hover{border-color:#D2D7E0;background:#FBFBFC}
+  .taskbtn svg{opacity:.5;transition:transform .15s}
+  .taskbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .taskmenu{
+    display:none;position:absolute;left:0;top:calc(100% + 6px);width:238px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:5px;z-index:60;
+    box-shadow:0 4px 12px rgba(16,24,40,.06),0 16px 36px -10px rgba(16,24,40,.18);
+  }
+  .taskmenu.show{display:block}
+  .trow{
+    position:relative;
+    display:flex;align-items:center;gap:8px;padding:7px 9px 7px 13px;border-radius:7px;
+    font-size:12.5px;color:var(--ink2);cursor:pointer;
+  }
+  .trow:hover{background:#F5F6F8;color:var(--ink)}
+  /* 选中行：淡蓝底 + 左侧一根独立竖条。
+     不用 box-shadow inset 画，因为圆角会让那根「条」在两端弯成括号。 */
+  .trow.on{background:#E6EDFA;color:var(--ink)}
+  .trow.on::before{
+    content:'';position:absolute;left:5px;top:6px;bottom:6px;width:3px;
+    border-radius:2px;background:var(--accent);
+  }
+  .trow.on .tn{color:#28466F}
+  .trow .tn{font-weight:600;min-width:42px}
+  .trow .tg{flex:1;font-size:11px;color:var(--ink3)}
+  .trow.on .tg{color:#63738C}
+  .trow .tp{font-family:Inter,sans-serif;font-size:11.5px;color:#2F7D51;font-weight:600}
+  .trow.on .tp{color:#22684A}
+  .trow.got .tp::after{content:" ✓"}
+  .status .tnum{font-family:Inter,sans-serif;font-size:12.5px;color:var(--ink2);white-space:nowrap;min-width:74px;text-align:right}
+  .claimbtn{
+    flex:none;border:1px solid #B7E2C6;background:#EAF8EF;color:#1F7A46;
+    border-radius:8px;padding:5px 11px;font-size:12.5px;font-weight:600;
+    cursor:pointer;font-family:inherit;white-space:nowrap;
+    transition:background .15s,border-color .15s,color .15s;
+  }
+  .claimbtn:hover:not(:disabled){background:#DCF3E4;border-color:#9FD5B4}
+  .claimbtn:disabled{background:#F4F5F7;border-color:#E7E9EE;color:var(--ink4);cursor:default}
+  .claimbtn.pulse{animation:claimPulse 1.8s ease-in-out infinite}
+  @keyframes claimPulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(31,122,70,.20)}
+    55%{box-shadow:0 0 0 6px rgba(31,122,70,0)}
+  }
+  .status .twrong{white-space:nowrap;font-size:12px;color:var(--ink3)}
+  .status .twrong b{font-size:13px;color:var(--ink2)}
+  .hstats .streak b{font-family:Inter,sans-serif}
+  .hstats .streak .best{font-size:11.5px;color:var(--ink3);margin-left:3px}
+  /* ---------- 图标与质感 ----------
+     图标只用在「数据项」和「面板标题」上，用来分组，不做装饰：
+     彩色 emoji 一多就廉价，所以控制到顶栏 3 个、任务 1 个、面板 3 个。 */
+  .emo{
+    font-style:normal;font-size:12.5px;line-height:1;margin-right:5px;
+    vertical-align:-1.5px;opacity:.92;
+  }
+  .ptitle .emo{font-size:12.5px;margin-right:5px;vertical-align:-1px}
+  .taskbtn .emo{vertical-align:-1.5px}
+  /* 顶栏各项之间一条竖线：比纯空格更能分组，又不增加噪音 */
+  .hstats{gap:14px}
+  .hstats > span{padding-left:14px;border-left:1px solid #E4E7EE}
+
+  /* ---------- 任务档位色 / 重置提示 / 等级色点 ---------- */
+  /* 四档用「由弱到强」的四种底色：钢灰 → 青绿 → 金橙 → 朱红。
+     只在标签上着色，数字保持墨色，一眼能分出档位又不花。 */
+  .tstat .tst{
+    display:inline-block;font-size:11px;font-weight:600;line-height:1.6;
+    padding:1px 6px;border-radius:5px;letter-spacing:.02em;
+  }
+  .tst.b {background:#E9EDF3;color:#52606F}   /* 石板灰（不带色相） */
+  .tst.a {background:#DCF0EC;color:#1E6B64}   /* 青 */
+  .tst.s {background:#D9E4F8;color:#2A4A8C}   /* 蓝 */
+  .tst.ss{background:#E7DDF8;color:#55379B}   /* 紫 */
+
+  .status .treset{font-size:11px;color:var(--ink3);white-space:nowrap}
+
+  /* 等级菜单每行前的小色点：浅色档位（后期接近白）白底会看不见，加一圈深描边。
+     不改成「挑更暗的颜色」——那样所有点都会变黑，反而分不出档位。 */
+  .rrow .nm{display:flex;align-items:center;min-width:0}
+  .rrow .rkdot{
+    width:8px;height:8px;border-radius:99px;flex:none;margin-right:7px;
+    box-shadow:0 0 0 1.5px rgba(16,24,40,.5);
+  }
+
+  /* 右栏三块面板各一条彩色左边线（橙=积分 / 蓝=任务 / 紫=规则），
+     和单字版同一套分块语言。 */
+  aside .panel{
+    --ac:var(--line);
+    border:1px solid #D4DCEA;border-left:3px solid var(--ac);
+    box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 20px -10px rgba(16,24,40,.10);
+  }
+  aside .panel:nth-of-type(1){--ac:var(--accent)}        /* 积分：主题蓝 */
+  aside .panel:nth-of-type(2){--ac:var(--accent-teal)}   /* 任务：青 */
+  aside .panel:nth-of-type(3){--ac:var(--accent-slate)}  /* 规则：石板灰 */
+
+  /* 任务履历：2×2，和原来两行「学习队列」一样高，右栏不增高 */
+  .tstat{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+  .tstat .ts{display:flex;align-items:baseline;gap:7px;padding:7px 0;font-size:12.5px;color:var(--ink2)}
+  .tstat .ts b{font-family:Inter,sans-serif;font-size:15px;font-weight:600;color:var(--ink)}
   .left{grid-column:1; grid-row:2; display:flex;flex-direction:column;gap:14px;min-height:0}
-  .bar{height:6px;border-radius:99px;background:#DDE1E8;overflow:hidden;display:flex;gap:2px}
-  .bar i{display:block;height:100%;border-radius:99px;background:var(--ink);transition:width .25s}
+  /* 槽用半透明深色，不写死色值：状态行压在渐变背景上，写死一个灰
+     在渐变的两端会一端太深、一端又看不见。 */
+  .bar{
+    height:6px;border-radius:99px;background:rgba(28,42,66,.13);
+    overflow:hidden;display:flex;gap:2px;
+    box-shadow:inset 0 0 0 1px rgba(28,42,66,.05);
+  }
+  .bar i{
+    display:block;height:100%;border-radius:99px;
+    /* 纯色打底 + 顶部一道 22% 白的高光。不用横向渐变：
+       横向渐变会随宽度拉伸，进度只有 10% 时整条都是浅色，色相也跟着变。 */
+    background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 55%),var(--bar-task);
+    transition:width .25s,background .2s;
+  }
+  .bar i.full{background:#2F9E62}      /* 达标可领 */
+  .bar i.got{background:#B7E2C6}       /* 今天这档已经领过 */
   .card{
-    background:#fff;border:1px solid var(--line);border-radius:18px;
+    background:var(--card);
+    /* 底色压暗之后，卡片和背景只差 15 个色阶，只靠阴影「托」不住了。
+       边框单独深一档（不跟着 --line），阴影分三层：贴边 1px 定边缘、
+       3px 的近影表示有点厚度、20px 的远影表示离开背景的高度。 */
+    border:1px solid #CFD8E7;border-radius:18px;
     padding:24px 26px;display:flex;flex-direction:column;
-    box-shadow:0 2px 10px rgba(16,24,40,.04),0 12px 28px -6px rgba(16,24,40,.05);
+    box-shadow:0 1px 2px rgba(16,24,40,.05),
+               0 3px 12px rgba(16,24,40,.055),
+               0 20px 44px -12px rgba(16,24,40,.15);
     min-height:336px;flex:1 1 auto;
   }
   .card.bad{border-color:#F5C9C9}
   .tagrow{display:flex;justify-content:flex-end;align-items:center}
   .hintlink{
     font-size:11px;color:var(--ink2);cursor:pointer;user-select:none;
-    background:#fff;border:1px solid #E1E4EA;border-radius:99px;padding:4px 11px;
+    background:var(--card);border:1px solid #E1E4EA;border-radius:99px;padding:4px 11px;
     display:inline-flex;align-items:center;gap:5px;
     transition:background .15s,border-color .15s,color .15s;
   }
@@ -145,10 +326,10 @@
     user-select:none;-webkit-user-select:none;pointer-events:none;
   }
   .char .glyph svg{width:112px;height:112px;display:block;overflow:visible}
-  .char .glyph svg path{fill:var(--ink);stroke:none}
+  .char .glyph svg path{fill:var(--glyph);stroke:none}
   .char .glyph .gch{
     display:flex;align-items:center;justify-content:center;
-    width:112px;height:112px;font-size:104px;line-height:1;color:var(--ink);
+    width:112px;height:112px;font-size:104px;line-height:1;color:var(--glyph);
     font-family:"PingFang SC","Hiragino Sans GB","Songti SC","Source Han Serif SC",serif;
   }
   .answerline{font-size:15px;color:var(--gc, var(--ink));font-weight:600;height:22px}
@@ -169,20 +350,27 @@
   .slot.bad{border-color:#F87171;background:#FEF2F2;color:var(--bad)}
   .slothint{font-size:12px;color:var(--ink3)}
   .kb{
-    background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 20px 18px;
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px 18px;
     display:flex;flex-direction:column;align-items:center;gap:7px;
     box-shadow:0 2px 10px rgba(16,24,40,.04),0 12px 28px -6px rgba(16,24,40,.05);
   }
   .kbrow{display:flex;gap:7px}
   .key{
-    width:78px;height:58px;border-radius:10px;display:flex;flex-direction:column;
+    /* 键帽宽度跟着窗口走：右栏固定 296，左边一栏能剩多少就分给十列。
+       为什么不用固定 78：窗口从 1440 缩到 1200 时左栏少 200 多，一行十个键
+       会顶出卡片（实测 1200 宽时溢出 7px、1181 时 16px），而且看不出是哪出错。
+       −490 = 右栏 296 + 栏间距 20 + 页面左右留白 52 + 键盘内边距 40 + 十个间隙 63 + 余量，
+       最后再留 19px 给滚动条/次像素，宁窄一点不顶出去。 */
+    width:min(78px,calc((100vw - 490px) / 10));
+    height:58px;border-radius:10px;display:flex;flex-direction:column;
     align-items:center;justify-content:center;gap:1px;cursor:pointer;
     border:1px solid transparent;transition:transform .06s, box-shadow .12s;
     user-select:none;
   }
   .key span{font-size:19px;font-weight:600;font-family:Inter,ui-sans-serif,sans-serif;line-height:1.1}
   .key em{font-size:9px;font-style:normal;opacity:.72;font-family:Inter,ui-sans-serif,sans-serif}
-  .key:active{transform:translateY(1px)}
+  .key{box-shadow:0 2px 0 rgba(16,24,40,.055), 0 1px 3px rgba(16,24,40,.045)}
+  .key:active{transform:translateY(1px);box-shadow:0 1px 0 rgba(16,24,40,.055)}
   .key.z1{background:var(--z1b);color:var(--z1)}
   .key.z2{background:var(--z2b);color:var(--z2)}
   .key.z3{background:var(--z3b);color:var(--z3)}
@@ -193,7 +381,7 @@
   .key.wrong{background:#FEF0F0!important;color:var(--bad)!important;border-color:#F87171!important}
   aside{grid-column:2; grid-row:2; display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
   .panel{
-    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
     box-shadow:0 1px 6px rgba(16,24,40,.03),0 8px 20px -6px rgba(16,24,40,.04);
   }
   .ptitle{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#8A919E;margin-bottom:12px}
@@ -202,31 +390,42 @@
   .amt{display:flex;align-items:baseline;gap:4px;flex:0 0 auto}
   .amt strong{font-size:27px;font-weight:600;font-family:Inter,sans-serif;letter-spacing:-.01em;color:var(--ink)}
   .amt em{font-style:normal;font-size:12px;color:var(--ink3)}
-  .track{height:6px;border-radius:99px;background:#EDEFF3;margin:10px 0 8px;overflow:hidden}
+  .track{
+    height:6px;border-radius:99px;background:rgba(28,42,66,.10);
+    margin:10px 0 8px;overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(28,42,66,.045);
+  }
+  /* 底色由 JS 按等级色写入，高级别会非常浅（l≈95），在浅卡上等于没有。
+     这里加一圈中性描边，不管底色多浅都有边界。 */
   .rankchip{
     display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;
     border-radius:99px;padding:4px 10px;
     font-size:13px;font-weight:600;
     background:#F1F2F4;color:#5F6673;
+    box-shadow:inset 0 0 0 1px rgba(28,42,66,.10);
   }
   .rankchip i{
     font-style:normal;font-family:Inter,sans-serif;font-size:10.5px;font-weight:600;
     opacity:.7;letter-spacing:.02em;
   }
   .rankchip b{font-weight:600}
-  .track i{display:block;height:100%;border-radius:99px;background:var(--ink);transition:width .3s}
+  .track i{
+    display:block;height:100%;border-radius:99px;
+    background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 55%),var(--bar-pt);
+    transition:width .3s;
+  }
   .note{font-size:11px;color:var(--ink3);line-height:1.65}
   .row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px;color:var(--ink2)}
   .row b{font-size:15px;font-weight:600;color:var(--ink);font-family:Inter,sans-serif}
   .row.bad b,.row.bad{color:var(--bad)}
-  .row .dot{width:6px;height:6px;border-radius:99px;display:inline-block;margin-right:7px;vertical-align:middle}
-  .btn{
-    width:100%;border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px;
-    font-size:12px;color:var(--ink2);cursor:pointer;margin-top:8px;font-family:inherit;
-  }
-  .btn:hover{background:#F7F8FA;color:var(--ink)}
-  .btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .row .neg{color:var(--bad)}
+  /* 连击是这块面板里唯一「活」的数字，也是得分的因，所以给它一点颜色和大一档字号。
+     三行因此有了主次：蓝（连击）→ 墨（现在每次得分）→ 墨（下一档）。
+     只在 >0 时上色，归零压暗——断连击的那一刻，颜色掉下去本身就是提示。 */
+  /* 文字用的是主题蓝的「深一档」#4A6FA8 而不是 #5C82C6：
+     前者压在白卡上 4.96:1，后者只有 3.75:1。进度条是图形（3:1 就够），
+     文字要 4.5:1，所以同色相取深档。 */
+  .row b.live{color:#4A6FA8;font-size:17px}
+  .row b.zero{color:#7C8493;font-weight:500;font-size:17px}
   .row i{font-style:normal;color:var(--ink);font-weight:600}
   .resetlink{
     width:100%;border:1px solid #EFB9B9;background:#FCE7E7;border-radius:9px;padding:8px;
@@ -245,29 +444,21 @@
   }
   .linkbtn:hover{color:var(--ink);text-decoration:underline}
   .dotsep{font-size:11px;color:var(--ink4);user-select:none}
-  /* 页脚：交代「数据从哪来 / 什么许可 / 什么版本」。
-     没写作者名——仓库归属本身就是署名，产品界面上再挂一遍只是噪音。
-     作者与许可信息放文件头的注释里，那是开源项目的惯例位置。 */
-  .signature{
-    margin-top:auto;                         /* 贴到右栏最底部，当页脚用 */
-    display:flex;align-items:baseline;justify-content:flex-end;gap:5px;
-    font-size:10.5px;line-height:1.45;letter-spacing:.01em;white-space:nowrap;
-    color:var(--ink3);user-select:none;
+  /* 版本号：跟在标题后面，读作标题的注脚。
+     它原先挂在右栏最底部靠 margin-top:auto 贴底——只要右栏内容比可视区多 1px，
+     就被推出滚动区，而 macOS 滚动条是覆盖式的、平时不显示，看起来就是「显示不全」。
+     挪到标题旁边后不参与任何布局计算，任何窗口、任何布局都在第一屏。
+     标题和版本号包在同一个行内盒（.btitle）里，两者共一条基线；
+     若各自当 flex 项，「小字跟大字对齐」会变成「盒子居中」，看起来飘。 */
+  .btitle{white-space:nowrap}
+  .ver{
+    font-size:11px;color:#8A919E;font-weight:400;font-family:Inter,sans-serif;
+    letter-spacing:.03em;white-space:nowrap;user-select:none;margin-left:9px;
   }
-  .signature .k{font-size:10px;color:var(--ink4)}
-  .signature .src{
-    color:var(--ink3);text-decoration:none;
-    border-bottom:1px solid transparent;
-    transition:color .12s,border-color .12s;
-  }
-  .signature .src:hover{color:var(--ink);border-bottom-color:var(--ink4)}
-  .signature i{font-style:normal;font-size:10px;color:var(--ink4);opacity:.75}
-  .signature i.bar{margin:0 2px;opacity:.5}
-  .signature b{font-weight:600;color:var(--ink2);font-family:Inter,sans-serif;letter-spacing:.02em}
   /* ---------- 顶栏「使用说明」 ---------- */
   .helplink{
     display:inline-flex;align-items:center;gap:5px;
-    background:#fff;border:1px solid var(--line);border-radius:99px;
+    background:var(--card);border:1px solid var(--line);border-radius:99px;
     padding:5px 11px;font-size:12px;color:var(--ink2);
     cursor:pointer;font-family:inherit;line-height:1.4;
     transition:background .12s,border-color .12s,color .12s;
@@ -280,7 +471,7 @@
 
   /* ---------- 使用说明弹窗 ---------- */
   .dlghelp{
-    border:none;padding:0;background:#fff;border-radius:16px;
+    border:none;padding:0;background:var(--card);border-radius:16px;
     width:min(600px,92vw);max-height:min(84vh,720px);
     box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
   }
@@ -323,8 +514,11 @@
   .hp-sec li{margin-bottom:3px}
   .hp-sec li:last-child{margin-bottom:0}
   .hp-sec b{font-weight:600;color:var(--ink)}
-  .hp-sec a{color:var(--ink3);text-decoration:none;border-bottom:1px solid var(--line)}
-  .hp-sec a:hover{color:var(--ink);border-bottom-color:var(--ink4)}
+  /* 说明里的链接（来源、许可、仓库）不能和正文一个颜色：
+     这些链接是要给人点开核对的，看得见才算数。用连击那个深一档的主题蓝，
+     和其它正文保持同一族，不引入新颜色。 */
+  .hp-sec a{color:#4A6FA8;text-decoration:none;border-bottom:1px solid #C3D0E4}
+  .hp-sec a:hover{color:#2F4E7A;border-bottom-color:#8FA6C6}
   .hp-tag{
     display:inline-block;padding:0 4px;border-radius:4px;background:#F1F3F6;
     font-family:Inter,sans-serif;font-size:11.5px;color:var(--ink);
@@ -333,7 +527,7 @@
 
   /* ---------- 确认框（替代原生 confirm） ---------- */
   .dlgask{
-    border:none;padding:0;background:#fff;border-radius:16px;
+    border:none;padding:0;background:var(--card);border-radius:16px;
     width:min(420px,92vw);
     box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
   }
@@ -343,7 +537,7 @@
   .askmsg{font-size:12.5px;color:var(--ink2);line-height:1.78;white-space:pre-line}
   .askfoot{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
   .askbtn{
-    border:1px solid var(--line);background:#fff;border-radius:8px;
+    border:1px solid var(--line);background:var(--card);border-radius:8px;
     padding:7px 16px;font-size:12.5px;color:var(--ink2);cursor:pointer;
     font-family:inherit;transition:background .12s,border-color .12s,color .12s;
   }
@@ -358,7 +552,7 @@
 
   /* ---------- 键盘速查弹窗 ---------- */
   .dlgkb{
-    border:none;padding:0;background:#fff;border-radius:16px;
+    border:none;padding:0;background:var(--card);border-radius:16px;
     width:auto;max-width:min(560px,94vw);
     box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
   }
@@ -393,11 +587,11 @@
   .kbi{
     width:60px;height:66px;border:1px solid var(--line);border-radius:9px;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
-    background:#fff;
+    background:var(--card);
   }
   .kbi svg{width:46px;height:46px;display:block}
-  .kbi svg path{fill:var(--ink)}
-  .kbi .gch{font-size:34px;line-height:1;color:var(--ink);
+  .kbi svg path{fill:var(--glyph)}
+  .kbi .gch{font-size:34px;line-height:1;color:var(--glyph);
     font-family:"PingFang SC","Hiragino Sans GB","Songti SC",serif}
   .kbi i{font-style:normal;font-size:9px;color:var(--ink4);font-family:Inter,sans-serif}
   .kbi.cur{border-color:var(--gc);box-shadow:0 0 0 2px color-mix(in srgb,var(--gc) 18%,transparent)}
@@ -418,7 +612,9 @@
     opacity:0;transition:.2s;pointer-events:none;
   }
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-  @media (max-width:1180px){
+  /* 两栏一直撑到 1100：再窄，任务行和十个键帽就排不开了，退回单列。
+     键帽宽度跟着窗口走（见 .key），所以 1100 出头也不会把卡片挤爆。 */
+  @media (max-width:1099px){
     main{
       grid-template-columns:1fr;
       grid-template-rows:auto auto auto;
@@ -431,21 +627,18 @@
     aside{grid-column:1; grid-row:3; flex-direction:row;flex-wrap:wrap;overflow:visible;min-height:auto}
     .resetlink{width:100%;text-align:center}
     aside .panel{flex:1 1 220px}
-    /* 单列时右栏变成横向流，签名改成占满一行、靠右，别挤在面板中间 */
-    .signature{
-      width:100%;margin-top:2px;
-    }
     .backuprow{width:100%;justify-content:flex-end;margin-top:0}
-    .key{width:60px;height:50px}
+    /* 单列时左栏就是整幅宽度：键帽 =（整宽 − 两侧留白）÷ 10 */
+    .key{width:min(78px,calc((100vw - 175px) / 10));height:50px}
   }
   /* 窗口偏矮时收紧右栏间距，避免多出滚动条 */
-  @media (max-height:780px) and (min-width:1181px){
+  @media (max-height:780px) and (min-width:1100px){
     aside{gap:10px}
   }
 
   /* 更矮的窗口（1366×620 这类，浏览器工具栏吃掉一截）：整体收紧，别出滚动条。
      逐项都是「按比例缩」，不改结构：卡片内边距、字根尺寸、键帽、面板内边距、右栏间距。 */
-  @media (max-height:700px) and (min-width:1181px){
+  @media (max-height:700px) and (min-width:1100px){
     main{gap:14px}
     .status{font-size:12px;gap:10px}
     .card{padding:14px 18px;min-height:264px;border-radius:15px}
@@ -458,7 +651,7 @@
     .slotrow{margin-top:3px}
     .slot{width:44px;height:44px;font-size:19px;border-radius:9px}
     .left{gap:10px}
-    .key{width:70px;height:46px;border-radius:9px}
+    .key{width:min(70px,calc((100vw - 490px) / 10));height:46px;border-radius:9px}
     .key span{font-size:14px}
     .kbrow{gap:6px}
     aside{gap:5px}
@@ -466,35 +659,98 @@
     .row{padding:5px 0}
     .ptitle{margin-bottom:4px}
     .score .amt strong{font-size:26px}
-    .panel h3{font-size:12px}
     .resetlink{padding:6px;font-size:12px}
     .backuprow{font-size:10.5px}
-    .signature{font-size:10px}
+  }
+
+  /* 单列/窄屏：任务行元素变多，用两行网格——上行放文字和按钮，下行让进度条独占。
+     不用 flex-wrap 是因为换行后「372/500」会和进度条分家，数字对不上条。 */
+  @media (max-width:1099px){
+    .status{display:grid;grid-template-columns:auto auto auto auto auto 1fr;gap:6px 10px;align-items:center}
+    .status .ttot{grid-row:1;grid-column:1}
+    .status .taskpick{grid-row:1;grid-column:2}
+    .status .tnum{grid-row:1;grid-column:3}
+    .status .claimbtn{grid-row:1;grid-column:4}
+    .status .twrong{grid-row:1;grid-column:5}
+    .status .treset{grid-row:1;grid-column:6;justify-self:end}
+    .status .bar{grid-row:2;grid-column:1 / -1;margin-top:2px}
+  }
+
+  /* 窗口再矮一档（580 上下）：右栏原来还溢出 13px，最底下的按钮被挤出可视区。
+     macOS 的滚动条是覆盖式、平时不显示，用户看到的就是"版本号被切了一半"。
+     这里把间距再收一格，580 高正好放得下；再矮就只能滚动了。 */
+  @media (max-height:600px) and (min-width:1100px){
+    aside{gap:4px}
+    aside .panel{padding:8px 10px}
+    .resetlink{padding:5px}
+    /* 卡片的高度是有下限的：字根 96 + 答案行 + 口诀 + 键位槽 + 四段间距 ≈ 262，
+       再往下压，槽就会挤到键盘卡上面去。所以这一档连字根一起收一档（96→84，
+       内容降到 ≈236），卡片最小高度同步落到 232 —— 收的是留白，不是把内容叠起来。 */
+    .card{min-height:232px}
+    .kb{padding:14px 20px 16px}
+    .center{gap:8px}
+    .char{height:84px;min-width:84px}
+    .char .glyph{height:84px;width:84px}
+    .char .glyph svg{width:84px;height:84px}
+    .char .glyph .gch{width:84px;height:84px;font-size:78px}
+    .slotrow{margin-top:0}
+    .slot{width:40px;height:40px;font-size:18px}
+  }
+
+  /* 再矮一点（540~575）：上一档还差十来个像素。这里只收「行间空气」，
+     字号和横向内边距都不动——省下来的是留白，不是内容。 */
+  @media (max-height:575px) and (min-width:1100px){
+    aside{gap:3px}
+    aside .panel{padding:7px 10px}
+    .ptitle{margin-bottom:3px}
+    .row{padding:3px 0}
+    .track{margin:6px 0 5px}
+    .resetlink{padding:4px}
+    .backuprow{margin-top:-2px}
+    /* 卡片在这一档还差 2px 才装得下内容，键盘内边距先让 2px 出来 */
+    .card{min-height:239px}
+    .kb{padding:13px 20px 15px}
+  }
+
+  /* 极矮（560 以下）：这次收的是「外壳」——顶栏、页面留白、键盘高度。
+     外壳全是空气，字形上一档已经收过一次，这里不再动它。 */
+  @media (max-height:560px) and (min-width:1100px){
+    header{height:52px;flex:0 0 52px}
+    main{padding:12px 20px 16px}
+    .key{height:42px}
+    .kb{padding:12px 20px 14px}
   }
 </style>
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#16181D"/><text x="16" y="23.4" text-anchor="middle" font-family="Songti SC,STSong,SimSun,serif" font-size="20" font-weight="700" fill="#FFFFFF">五</text></svg></div>五笔字根 · 86 版</div>
+  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.17</span></span></div>
   <div class="hstats">
     <div class="rankwrap">
       <button class="rank" id="rankBtn" type="button" aria-haspopup="true" aria-expanded="false">
-        <span id="hRankText">黑铁 Ⅴ</span>
+        <span id="hRankText">Lv1 白身</span>
         <svg viewBox="0 0 10 6" width="9" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <div class="rankmenu" id="rankMenu" role="menu"></div>
     </div>
-    <span><b id="hPoints">0</b> 分</span>
-    <span>连击 <b id="hCombo">0</b></span>
+    <span><i class="emo">💰</i>总分 <b id="hPoints">0</b> 分</span>
+    <span class="streak" title="当天完成一次 B 级任务算签到一天"><i class="emo">🔥</i>连续 <b id="hStreak">0</b> 天<span class="best" id="hBest"></span></span>
     <button class="helplink" id="btnHelp" type="button" title="使用说明（快捷键 ?）"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="8" cy="8" r="6.55" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.2 6.3a1.85 1.85 0 113.05 1.45c-.55.45-.95.78-.95 1.5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="8.3" cy="11.5" r=".9" fill="currentColor"/></svg>使用说明</button>
-  </div>
+      </div>
 </header>
 
 <main>
   <div class="status">
-    <span>已过 <b id="qPos">0</b> / 共 <b id="qTotal">328</b> 个</span>
+    <span class="ttot" title="历史上累计答对的次数，不随每天重置">累计已打 <b id="tTotal">0</b> 题</span>
+    <div class="taskpick">
+      <button class="taskbtn" id="taskBtn" type="button" aria-haspopup="true" aria-expanded="false"><i class="emo">🎯</i><span id="taskBtnTx">每日任务 · B 级</span><svg viewBox="0 0 10 6" width="9" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="taskmenu" id="taskMenu" role="menu"></div>
+    </div>
     <div class="bar"><i id="progressBar" style="width:0%"></i></div>
-    <span>打错 <b id="qWrong">0</b> 次</span>
+    <span class="tnum" id="taskNum">0/500</span>
+    <button class="claimbtn" id="claimBtn" type="button" disabled>领取 1%</button>
+    <span class="twrong" title="今天答错的次数，每天 06:00 归零">今日错 <b id="qWrong">0</b></span>
+    <span class="treset">每天 06:00 重置</span>
   </div>
 
   <section class="left">
@@ -518,25 +774,29 @@
 
   <aside>
     <div class="panel">
-      <div class="ptitle"><b>积分 · 段位</b><span id="pct">0%</span></div>
+      <div class="ptitle"><b><i class="emo">🏆</i>积分 · 段位</b><span id="pct">0%</span></div>
       <div class="score">
         <span class="amt"><strong id="pPoints">0</strong><em>分</em></span>
-        <span class="rankchip" id="rankChip"><i id="pLv">Lv1</i><b id="pRank">不堪一击</b></span>
+        <span class="rankchip" id="rankChip"><i id="pLv">Lv1</i><b id="pRank">白身</b></span>
       </div>
       <div class="track"><i id="pTrack" style="width:0%"></i></div>
       <div class="note" id="pNote">这一段还差 100 分</div>
     </div>
 
     <div class="panel">
-      <div class="ptitle"><b>学习队列</b><span id="qLeft"></span></div>
-      <div class="row"><span><i class="dot" style="background:#5F6673"></i>已过一遍</span><b id="sDone">0</b></div>
-      <div class="row"><span><i class="dot" style="background:#B6BCC7"></i>还没打过</span><b id="sNew">0</b></div>
+      <div class="ptitle"><b><i class="emo">📋</i>任务履历</b><span id="rootsTotal">328 题</span></div>
+      <div class="tstat">
+        <div class="ts"><span class="tst b">B 级</span><b id="histB">0</b></div>
+        <div class="ts"><span class="tst a">A 级</span><b id="histA">0</b></div>
+        <div class="ts"><span class="tst s">S 级</span><b id="histS">0</b></div>
+        <div class="ts"><span class="tst ss">SSS</span><b id="histSSS">0</b></div>
+      </div>
     </div>
 
     <div class="panel">
-      <div class="ptitle"><b>计分规则</b><span>上限 +2 万</span></div>
+      <div class="ptitle"><b><i class="emo">🧮</i>计分规则</b><span>上限 +2 万</span></div>
+      <div class="row"><span>当前连击</span><b id="rCombo" class="zero">0 次</b></div>
       <div class="row"><span>现在每次答对</span><b id="rGain">+1</b></div>
-      <div class="row"><span>答错一次</span><b id="rCost" class="neg">−10</b></div>
       <div class="row"><span>再连对 <i id="rNeed">10</i> 次</span><b id="rNext">+2</b></div>
     </div>
 
@@ -548,8 +808,6 @@
       <button class="linkbtn" id="btnImport" title="从备份文件恢复进度（会覆盖当前进度）">导入进度</button>
     </div>
     <input type="file" id="fileIn" accept=".json,application/json" hidden>
-
-    <div class="signature" title="字根字形来自 sdcb/wubi86-viewer（AGPL-3.0）；字根口诀为五笔 86 方案，公有领域。点击来源可查看原项目。"><span class="k">数据</span><a class="src" href="https://github.com/sdcb/wubi86-viewer" target="_blank" rel="noopener">sdcb/wubi86-viewer</a><i class="bar">|</i><span>AGPL-3.0</span><i>·</i><b>v1.0.19</b></div>
   </aside>
 </main>
 
@@ -572,7 +830,7 @@
         <ul>
           <li>屏幕中间出现一个字根，<b>按它所在的字母键</b>，键盘图上对应位置会亮一下。</li>
           <li>第一次碰到的、以及刚打错的，会直接给答案：正确键位、区名和口诀。</li>
-          <li>打错<b>不会跳过</b>——那张卡留在队首，必须打对才往后走，同时连击归零并扣分。</li>
+          <li>打错<b>不会跳过</b>——那张卡留在队首，必须打对才往后走，同时连击归零、这一题不给分。</li>
           <li>25 个一级简码（一地在要工…）也混在题里，答法和字根一样，按对应字母键。</li>
         </ul>
       </section>
@@ -590,19 +848,43 @@
         <div class="hp-h"><i>4</i>计分</div>
         <ul>
           <li>答对得 <span class="hp-tag">1 × 连击档位</span> 分。连击越高，每次得分越多。</li>
-          <li>答错扣 <span class="hp-tag">当前每次得分 × 5</span>，扣到 0 为止，不会变成负数。</li>
+          <li>答错<b>不得分、连击归零，但不扣分</b>——分数只增不减。
+              所以尽管去练不熟的字根，打错不会有任何损失；连击断了下一题从头攒。</li>
           <li>右栏「计分规则」面板实时显示当前值，不用记这些数。</li>
         </ul>
       </section>
 
       <section class="hp-sec">
         <div class="hp-h"><i>5</i>段位</div>
-        <p>共 50 级，从 Lv1「不堪一击」到 Lv50「返璞归真」。
-           <b>点右上角的段位名</b>可以看完整阶梯，以及每一级需要多少积分。</p>
+        <p>共 50 级，走的是<b>明代科举 + 文官品级</b>：从 Lv1「白身」一路考到 Lv50「首辅」。
+           <b>点右上角的段位名</b>可以看完整阶梯、每级的品级，以及需要多少积分。</p>
+        <p>前 16 级是功名（白身 → 童生 → 生员 → 举人 → 进士 → 状元），科举阶段没有品级，
+           标签写的是考试名目；第 17 级授官以后，标签换成品级。</p>
+        <p>品级依《大明会典》：<b>尚书正二品、侍郎正三品</b>（这两条和清代不同），
+           大学士本官只有正五品、靠加衔才到一品，所以顶上直接列「首辅」——例加太师衔的中极殿大学士。
+           每五级换一次颜色，一个颜色就是一个身份阶段。</p>
+        <p>难度上，前八级是起步坡（举人约一小时），之后每五级门槛翻一倍。
+           按每天练一小时、准确率 98% 算，考到「状元」约需三四小时，官至「首辅」约需一年。
+           满级之后分数照旧累积——那时比的就是连击能挂多长，准确率 99% 以上的人
+           每题能拿十几二十分，练上几年可以到几千万分。</p>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>6</i>进度存在哪</div>
+        <div class="hp-h"><i>6</i>每日任务与签到</div>
+        <ul>
+          <li>上方那条进度是<b>今日任务</b>：B 级 500 题 · A 级 2000 题 · S 级 5000 题 · SSS 级 10000 题。
+              点任务名换档，四档<b>共用同一个今日计数</b>，换档不清零（打到 800 再切 A 级，显示的就是 800/2000）。</li>
+          <li><b>只有答对才算数</b>，打错不加进度、也不扣进度——任务是督促练习，不是凑按键次数。</li>
+          <li>每天<b>凌晨 6 点</b>清零。熬夜两点练完仍算前一天，不会把连续签到判成断了。</li>
+          <li>达标后点「领取」拿奖励：B 1% · A 1.5% · S 2.5% · SSS 4%，按<b>点下去那一刻的总分</b>算。
+              每档每天各一份，<b>不点就不领</b>，过了 6 点作废。</li>
+          <li>当天完成过一次 B 级任务就算签到一天。顶栏显示当前连续天数；断签从 1 重算，
+              「最长」一直留着做记录。右栏「任务履历」是各档累计完成次数，只增不减。</li>
+        </ul>
+      </section>
+
+      <section class="hp-sec">
+        <div class="hp-h"><i>7</i>进度存在哪</div>
         <ul>
           <li>自动存在浏览器本地，关掉页面再打开，接着上次继续。</li>
           <li>换电脑或重装系统：右下角<b>「导出进度」</b>存成一个 json 文件，
@@ -612,19 +894,25 @@
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>7</i>几点提醒</div>
+        <div class="hp-h"><i>8</i>几点提醒</div>
         <ul>
           <li>这是给<b>已经会五笔指法</b>的人练熟字根用的。还不会拆字的话，先学基本规则再来。</li>
-          <li><b>Z 是万能键</b>，按它不算对也不算错，不会扣分。</li>
-          <li>「重置全部进度」会清空分数、连击和全部熟练度，不能撤销。</li>
+          <li><b>Z 是万能键</b>，按它不算对也不算错，分数和连击都不动。</li>
+          <li>「重置全部进度」会清空分数、连击、全部熟练度、任务履历和连续签到，等于删档重来，不能撤销。</li>
         </ul>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>8</i>数据来源</div>
-        <p>字根字形（303 个 SVG 路径）来自
-           <a href="https://github.com/sdcb/wubi86-viewer" target="_blank" rel="noopener">sdcb/wubi86-viewer</a>，
-           以 AGPL-3.0 授权；字根口诀为五笔 86 方案（王永民，1983），属公有领域。</p>
+        <div class="hp-h"><i>9</i>来源与许可</div>
+        <p><b>字形、字根名称、口诀、分区配色</b>：<a href="https://github.com/sdcb/wubi86-viewer" target="_blank" rel="noopener">sdcb/wubi86-viewer</a>
+           （AGPL-3.0）。303 条轮廓路径取自其字根字体「黑体字根」（U+E000–E290），为矢量数据，不含字体文件。</p>
+        <p><b>该字体出处</b>：上游未注明。字体表特征（允许可编辑嵌入、带提示程序、690 个字形全映射在私用区）
+           表明它由现成黑体子集化后重映射而成。权利人如有异议，改用自绘字形。</p>
+        <p><b>未采用</b>：微软五笔词库、search-wubi 拆解数据、Make Me a Hanzi 笔画矢量（Arphic Public License）。
+           本工具无编码查询、拆字、笔顺功能，上述许可义务不适用。</p>
+        <p><b>五笔 86 方案</b>：王永民，1983。键名、一级简码、字根口诀属公有领域。</p>
+        <p><b>本页许可</b>：<a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a>。
+           无构建、无压缩，源码即此文件：<a href="https://github.com/snihqi/wubi86-roots" target="_blank" rel="noopener">snihqi/wubi86-roots</a>。</p>
       </section>
 
     </div>
@@ -659,8 +947,8 @@
 
 <script>
 /* ============================================================
-   字根表（依据《86五笔字根图》晓览YMPA 2024.10.1 版整理）
-   每项：[字根, 是否主字根]
+   KEYS：25 个字母键的区位、区名与助记词
+   GLYPHS：每个键下的字根字形（矢量路径），见下方
    ============================================================ */
 /* ---------- 25 键：区位 + 助记词（字根字形一律走矢量路径，见 GLYPHS） ---------- */
 const KEYS = [
@@ -708,14 +996,11 @@ const YIJIAN = {
 };
 
 
-/* ---------- 算法参数（照搬虎码源码） ---------- */
+/* ---------- 算法参数 ----------
+   位置表与连击阶梯的取值，参照虎码练习器公开的练习规则（同一套间隔重复思路），
+   代码是照 328 题规模重写的，没有引入对方任何代码。 */
 const POS_TABLE = {0:2, 1:4, 2:8, 3:12, 4:20, 5:30, 6:60, 7:100};   // 第 n 次答对 → 插回第几位
 const TAIL_FROM = 8;             // 第 9 次起 → 队尾
-/* 答错扣分：按「当时每次得分 × 5」，也就是恒等于连错 5 次的分。
-   不设门槛，所以从第一题到最高等级，痛感比例一样。
-   倍数不宜再高：10 倍时失误率只要过 8%，分数就基本涨不动了（新手期一直是 Lv1）。 */
-const PENALTY_FACTOR = 5;
-
 /* 连击阶梯（阈值 → 每对得分），用于界面显示「下一档还差几次」 */
 const TP_STEPS = [[10,2],[20,4],[30,6],[40,10],[50,15],[100,20],[200,30],
                   [300,50],[500,100],[1000,1000],[2000,2000],[3000,3000],
@@ -747,19 +1032,32 @@ function TP(combo){                    // 连击系数阶梯
   if(combo>10)    return 2;
   return 1;
 }
-/* 50 级：等级名借鉴《英雄坛说》，积分阶梯借鉴《热血传奇》
-   每项 = [到达该级所需的累计积分, 等级名] */
+/* ---------- 五十级：明代科举 + 文官品级 ----------
+   取《大明会典》的文官品级：尚书正二品、侍郎正三品——这两条和清代不同；
+   大学士在明代本官只有正五品（靠加衔才到一品），所以不单列一级，
+   顶端直接用「首辅」（例加太师衔的中极殿大学士）。
+   第三项是给等级菜单看的标签：科举阶段标考试，做官以后标品级。
+
+   门槛的排法：
+     Lv1–8  起步坡，倍率 3.0→1.8，98% 准确率约一小时走到举人；
+     Lv9 起 色带内 ×1.09、跨色带 ×1.42，每五级翻一倍。
+   满级 1100 万 = 每天练一小时、98% 准确率，正好一年。
+   每题得分上限是连击破万后的 2 万分；再往上堆分数没有意义，
+   所以门槛按「一年能打到」来定，而不是按分数上不封顶来定。 */
 const RANKS = [
-  [0,'不堪一击'],[100,'毫不足虑'],[300,'不足挂齿'],[600,'初学乍练'],[1000,'勉勉强强'],
-  [1600,'初窥门径'],[2500,'初出茅庐'],[3700,'略知一二'],[5400,'普普通通'],[7900,'平平常常'],
-  [13900,'平淡无奇'],[21900,'粗懂皮毛'],[31900,'半生不熟'],[46900,'登堂入室'],[76900,'略有小成'],
-  [116900,'已有小成'],[166900,'鹤立鸡群'],[236900,'驾轻就熟'],[336900,'青出于蓝'],[456900,'融会贯通'],
-  [596900,'心领神会'],[846900,'炉火纯青'],[1146900,'了然于胸'],[1496900,'略有大成'],[1896900,'已有大成'],
-  [2396900,'豁然贯通'],[3096900,'非比寻常'],[4096900,'出类拔萃'],[5496900,'罕有敌手'],[7296900,'技冠群雄'],
-  [9296900,'神乎其技'],[11696900,'出神入化'],[14496900,'傲视群雄'],[17696900,'登峰造极'],[21296900,'无与伦比'],
-  [25296900,'所向披靡'],[30096900,'一代宗师'],[35696900,'精深奥妙'],[43896900,'神功盖世'],[52896900,'举世无双'],
-  [64896900,'惊世骇俗'],[80896900,'撼天动地'],[110896900,'震古铄今'],[160896900,'超凡入圣'],[240896900,'威镇寰宇'],
-  [360896900,'空前绝后'],[640896900,'天人合一'],[1000896900,'深藏不露'],[1400896900,'深不可测'],[1820896900,'返璞归真'],
+  [0,'白身','—'],[200,'童生','童试'],[600,'生员','院试'],[1600,'增生','院试'],
+  [4000,'廪生','院试'],[9000,'贡生','国子监'],[18000,'监生','国子监'],[32000,'举人','乡试'],
+  [35000,'解元','乡试'],[38200,'贡士','会试'],[54400,'会元','会试'],[59400,'进士','殿试'],
+  [64900,'传胪','殿试'],[71000,'探花','一甲'],[77500,'榜眼','一甲'],[110000,'状元','一甲'],
+  [121000,'庶吉士','翰林院'],[132000,'检讨','从七品'],[144000,'编修','正七品'],[157000,'御史','正七品'],
+  [224000,'都给事中','正七品'],[245000,'修撰','从六品'],[268000,'主事','正六品'],[292000,'侍读','正六品'],
+  [319000,'侍讲','正六品'],[455000,'员外郎','从五品'],[497000,'侍读学士','从五品'],[543000,'郎中','正五品'],
+  [593000,'翰林学士','正五品'],[648000,'祭酒','从四品'],[923000,'佥都御史','正四品'],[1010000,'按察副使','正四品'],
+  [1100000,'知府','正四品'],[1200000,'太仆寺卿','从三品'],[1320000,'参政','从三品'],[1870000,'按察使','正三品'],
+  [2050000,'通政使','正三品'],[2240000,'大理寺卿','正三品'],[2440000,'副都御史','正三品'],[2670000,'侍郎','正三品'],
+  [3800000,'布政使','从二品'],[4150000,'尚书','正二品'],[4540000,'左都御史','正二品'],[4960000,'少保','从一品'],
+  [5420000,'少傅','从一品'],[7720000,'少师','从一品'],[8430000,'太保','正一品'],[9210000,'太傅','正一品'],
+  [10100000,'太师','正一品'],[11000000,'首辅','正一品']
 ];
 function rankOf(p){
   let r = RANKS[0][1];
@@ -779,7 +1077,7 @@ function rankProgress(p){
   return { i, lo, nxt, t };
 }
 
-/* 等级配色：每 5 级换一次，颜色随等级推进；最后一档墨底金字（返璞归真） */
+/* 等级配色：每 5 级换一次，一个色带 = 一个身份阶段；最后一档墨底金字（首辅） */
 const LV_TINT = [
   [6,  '#5F6673', '#F1F2F4'],   // Lv1–5     灰
   [11, '#4C6B82', '#EDF2F6'],   // Lv6–10    石板青
@@ -811,12 +1109,29 @@ function fmtScore(n){
 /* v7：字根表从 211 张位图换成 303 个矢量字根，si 编号整体变了，
    旧档的熟练度对不上任何一张新卡，所以不迁移、不复用 v6。 */
 const SAVE_KEY = 'wubi-roots-srs-v7';
-const LEGACY_KEYS = [];
-const DEFAULTS = { points:0, combo:0, maxCombo:0, wrongs:0, showMn:true };
+const DEFAULTS = { points:0, combo:0, wrongs:0, showMn:true };
+
+/* ---------- 每日任务 ----------
+   进度条原来是「已过一遍 / 共 328」，第一次走满就永久停在 100%，之后没有任何反馈。
+   现在换成任务：四档共用同一个「今日有效推进数」，答对才加一，每天 6 点清空。
+   答错不加进度（也不扣），因为任务是督促练习，乱按凑数没有意义。 */
+const TASKS = [
+  { id:'B',   label:'B 级',   need:500,   pct:1.0 },
+  { id:'A',   label:'A 级',   need:2000,  pct:1.5 },
+  { id:'S',   label:'S 级',   need:5000,  pct:2.5 },
+  { id:'SSS', label:'SSS 级', need:10000, pct:4.0 }
+];
+const DAY_CUT = 6;                       // 凌晨 6 点换日：熬夜练完的算前一天
+
+let daily = { day:'', count:0, wrongs:0, done:{}, claimed:{} };
+let totalHits = 0;                       // 总计已打，累计，不随日切归零
+let taskHist = { B:0, A:0, S:0, SSS:0 }; // 各档历史完成次数
+let streak = { cur:0, best:0, last:'' };
+let selectedTask = 'B';
 
 let pool = [];          // 328 张：303 个字根 + 25 个一简，交错排列
 let queue = [];         // [{pi, count, failed}]
-let points = 0, combo = 0, maxCombo = 0, wrongs = 0;
+let points = 0, combo = 0, wrongs = 0;
 let showMn = true;
 let locked = false;
 let epoch = 0;          // 队列「世代号」：重置时 +1，作废还在排队中的答对回调
@@ -923,7 +1238,8 @@ function save(){
       order:  queue.map(it => identOf(pool[it.pi])),
       counts: queue.map(it => it.count),
       failed: queue.map(it => it.failed ? 1 : 0),
-      points, combo, maxCombo, wrongs, showMn
+      points, combo, wrongs, showMn,
+      daily, totalHits, taskHist, streak, selectedTask
     }));
   }catch(e){
     /* 存储被禁用 / 空间满：静默失败最伤人（打一晚全丢），所以提示一次 */
@@ -935,8 +1251,8 @@ function save(){
 }
 
 /* 存档里的整数一律走这里：不用 `|0`。
-   `|0` 是 32 位截断，2000 分以下看不出来，但 21.5 亿以上会翻负——而 Lv50 要 18.2 亿，
-   正好在射程内，一旦溢出，满级玩家刷新一次页面分数就归零。 */
+   `|0` 是 32 位截断，21.5 亿以上会翻负；满级虽然只要 1100 万，
+   但分数本身不设上限（满级后照旧累积），所以不能拿 `|0` 赌。 */
 function safeInt(v, fallback, min, max){
   const n = Math.floor(Number(v));
   if(!Number.isFinite(n)) return fallback === undefined ? 0 : fallback;
@@ -949,16 +1265,42 @@ function safeInt(v, fallback, min, max){
 function load(){
   buildPool();
   let raw = null;
-  for(const key of [SAVE_KEY, ...LEGACY_KEYS]){
-    try{ raw = JSON.parse(localStorage.getItem(key) || 'null'); }catch(e){ raw = null; }
-    if(raw) break;
-  }
+  try{ raw = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); }catch(e){ raw = null; }
   const s = Object.assign({}, DEFAULTS, raw || {});
   points = safeInt(s.points, 0, 0);          // 负数归零，但不再被 32 位截断
   combo = safeInt(s.combo, 0, 0);
-  maxCombo = safeInt(s.maxCombo, 0, 0);
   wrongs = safeInt(s.wrongs, 0, 0);
   showMn = s.showMn !== false;
+
+  /* 任务系统是后加的：老存档没有这些字段，全部按「今天从零开始」处理。 */
+  const d = s.daily || {};
+  daily = {
+    day:   typeof d.day === 'string' ? d.day : '',
+    count: safeInt(d.count, 0, 0),
+    wrongs: safeInt(d.wrongs, 0, 0),
+    done:  (d.done && typeof d.done === 'object') ? d.done : {},
+    claimed: (d.claimed && typeof d.claimed === 'object') ? d.claimed : {}
+  };
+  totalHits = safeInt(s.totalHits, 0, 0);
+  const th = s.taskHist || {};
+  taskHist = {
+    B:   safeInt(th.B,   0, 0),
+    A:   safeInt(th.A,   0, 0),
+    S:   safeInt(th.S,   0, 0),
+    SSS: safeInt(th.SSS, 0, 0)
+  };
+  const sk = s.streak || {};
+  streak = {
+    cur:  safeInt(sk.cur, 0, 0),
+    best: safeInt(sk.best, 0, 0),
+    last: typeof sk.last === 'string' ? sk.last : ''
+  };
+  selectedTask = TASKS.some(x => x.id === s.selectedTask) ? s.selectedTask : 'B';
+  /* totalHits 是后加的字段，老档没有。不能让「总计」显示 0 显得白练了——
+     用熟练度反推：每张卡答对过 c+1 次（count 从 -1 起算），全部加起来就是打过多少题。 */
+  if(!totalHits && raw && Array.isArray(raw.counts)){
+    totalHits = raw.counts.reduce((a, c) => a + (c >= 0 ? c + 1 : 0), 0);
+  }
 
   const idx = new Map(pool.map((p, i) => [identOf(p), i]));
   const failedAt = i => !!(Array.isArray(raw && raw.failed) && raw.failed[i]);
@@ -1035,32 +1377,36 @@ function answer(key){
       if(ep !== epoch) return;              // 这 110ms 里点过「重置」或导入，这次答对作废
       locked = false;
       combo += 1;
-      maxCombo = Math.max(maxCombo, combo);
       points += 1 * TP(combo + 1);
+      /* 记账放在推进之前：进度条、领取按钮、跨档提示读的都是同一个 daily.count */
+      const justDone = bumpDaily();
       advance();
       render();
       save();
+      if(justDone) toast(justDone.label + '任务完成，可以领取 ' + justDone.pct + '% 奖励');
     }, 110);
   } else {
     // 答错：清零 + 原地重来（题目留在队首，一步都不往后挪）
-    const prevCombo = combo;
     cur.count = -1;
     cur.failed = true;
-    const deduct = Math.min(gainAt(prevCombo) * PENALTY_FACTOR, points);   // 扣到 0 为止，不出负数
-    if(deduct > 0) points -= deduct;
+    /* 答错只做两件事：不得分、连击归零。
+       不扣分是刻意的——原来错一次要倒扣「当前得分 × 5」，后期一次几万分，
+       等于一整天白打，太伤。现在分数的意义是「练了多少」，不该往回走。 */
     combo = 0;
     wrongs += 1;
+    ensureToday();
+    daily.wrongs += 1;
     flashKey(key, 'wrong');
     flashKey(right, 'correct');
     render();
-    if(deduct > 0) flashPen(deduct);      // 放在 render 之后，否则会被「还差多少分」覆盖
+    flashBreak();                         // 放在 render 之后，否则会被「还差多少分」覆盖
     save();
   }
 }
 
 /* ---------- 渲染 ---------- */
 const $ = id => document.getElementById(id);
-let penTimer = null, penActive = false;      // 扣分提示的定时器与状态（render 会读 penActive）
+let breakTimer = null, breakActive = false;  // 「连击断了」提示的定时器与状态（render 会读 breakActive）
 
 function renderKeyboard(){
   const kb = $('kb');
@@ -1158,12 +1504,104 @@ function renderGlyph(p){
     : '<span class="gch">' + (p.ch || '') + '</span>';
 }
 
+/* ---------- 今日任务：日界 / 记账 / 签到 / 领取 ---------- */
+function pad2(n){ return n < 10 ? '0' + n : '' + n; }
+
+/* 「学习日」：凌晨 6 点前算前一天。这样 5 点练完不会把连续签到判成断了。 */
+function dayKey(ts){
+  const d = new Date(ts === undefined ? Date.now() : ts);
+  if(d.getHours() < DAY_CUT) d.setDate(d.getDate() - 1);
+  return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+function prevDayKey(k){
+  const p = k.split('-').map(Number);
+  const d = new Date(p[0], p[1] - 1, p[2]);
+  d.setDate(d.getDate() - 1);
+  return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+
+/* 每次渲染/记账前过一遍：跨了学习日就把今日清零。返回是否发生了跨日。 */
+function ensureToday(){
+  const k = dayKey();
+  if(daily.day === k) return false;
+  daily.day = k;
+  daily.count = 0;
+  daily.wrongs = 0;
+  daily.done = {};
+  daily.claimed = {};
+  return true;
+}
+
+function curTask(){
+  return TASKS.find(x => x.id === selectedTask) || TASKS[0];
+}
+
+/* 答对一次记一笔。跨过某一档就算「完成一次」，同时把 B 级默认成签到。 */
+function bumpDaily(){
+  ensureToday();
+  daily.count += 1;
+  totalHits += 1;
+  let just = null;
+  for(const x of TASKS){
+    if(daily.count >= x.need && !daily.done[x.id]){
+      daily.done[x.id] = true;
+      taskHist[x.id] = (taskHist[x.id] || 0) + 1;
+      if(x.id === 'B') touchStreak();
+      just = x;
+    }
+  }
+  return just;
+}
+
+/* 签到：按「学习日」比，昨天签过就 +1，否则从 1 重来；最长连续单独记，断签不清零。 */
+function touchStreak(){
+  const today = dayKey();
+  if(streak.last === today) return;
+  streak.cur = (streak.last && streak.last === prevDayKey(today)) ? streak.cur + 1 : 1;
+  streak.last = today;
+  if(streak.cur > streak.best) streak.best = streak.cur;
+}
+
+/* 领取：点一次给一次，不点不给。每档每天各一份，按「领取那一刻」的积分算百分比。 */
+function claimTask(id){
+  ensureToday();
+  const x = TASKS.find(v => v.id === id);
+  if(!x || daily.claimed[x.id]) return false;
+  if(daily.count < x.need) return false;
+  const gain = Math.round(points * x.pct / 100);
+  daily.claimed[x.id] = true;
+  points += gain;
+  render();
+  save();
+  toast(gain > 0 ? ('奖励 +' + gain.toLocaleString('en-US') + ' 分') : '这档完成了，但分数还太少，奖励记 0');
+  return true;
+}
+
+function buildTaskMenu(){
+  ensureToday();
+  $('taskMenu').innerHTML = TASKS.map(x => {
+    const ok = daily.count >= x.need;
+    const got = daily.claimed[x.id];
+    const tail = got ? '已领取' : ok ? '可领取' : ('还需 ' + (x.need - daily.count) + ' 题');
+    return '<div class="trow' + (x.id === selectedTask ? ' on' : '') + (got ? ' got' : '') + '" data-t="' + x.id + '" role="menuitem">' +
+             '<span class="tn">' + x.label + '</span>' +
+             '<span class="tg">' + tail + '</span>' +
+             '<span class="tp">' + x.pct + '%</span>' +
+           '</div>';
+  }).join('');
+}
+
+function setTaskMenu(open){
+  if(open) buildTaskMenu();
+  $('taskMenu').classList.toggle('show', open);
+  $('taskBtn').setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
 function render(){
   const cur = queue[0];
   if(!cur) return;
   const p = pool[cur.pi];
   const total = queue.length;
-  const doneCount = queue.filter(it=>it.count >= 0).length;
 
   // 题目
   /* 整张卡的主题色 = 这个字根所在区的颜色。
@@ -1184,11 +1622,30 @@ function render(){
     ? '这是新卡或刚打错，跟着打一遍'
     : '按下它所在的字母键';
 
-  // 进度
-  $('qPos').textContent = doneCount;
-  $('qTotal').textContent = total;
-  $('qWrong').textContent = wrongs;
-  $('progressBar').style.width = Math.round(doneCount / total * 100) + '%';
+  // 今日任务（进度条不再按「覆盖度」算，那种一次性的条满了就没用了）
+  ensureToday();
+  const tk = curTask();
+  const tkDone = Math.min(daily.count, tk.need);
+  $('tTotal').textContent = totalHits.toLocaleString('en-US');
+  $('taskBtnTx').textContent = '每日任务 · ' + tk.label;
+  $('taskNum').textContent = tkDone + '/' + tk.need;   // 进度不分组：500/2000 比 500/2,000 清爽
+  $('progressBar').style.width = Math.round(tkDone / tk.need * 100) + '%';
+  $('progressBar').classList.toggle('full', tkDone >= tk.need && !daily.claimed[tk.id]);
+  $('progressBar').classList.toggle('got', !!daily.claimed[tk.id]);
+  $('qWrong').textContent = daily.wrongs;
+
+  const canClaim = daily.count >= tk.need && !daily.claimed[tk.id];
+  $('claimBtn').textContent = daily.claimed[tk.id] ? '已领取' : ('领取 ' + tk.pct + '%');
+  $('claimBtn').disabled = !canClaim;
+  $('claimBtn').classList.toggle('pulse', canClaim);
+
+  $('hStreak').textContent = streak.cur;
+  $('hBest').textContent = streak.best > 0 ? ('· 最长 ' + streak.best + ' 天') : '';
+  $('histB').textContent = taskHist.B;
+  $('histA').textContent = taskHist.A;
+  $('histS').textContent = taskHist.S;
+  $('histSSS').textContent = taskHist.SSS;
+  $('rootsTotal').textContent = total + ' 题';       // 328 张卡（303 字根 + 25 简码），说「题」才不误读成字根数
 
   // 顶栏 / 右栏
   const rp = rankProgress(points);
@@ -1197,7 +1654,12 @@ function render(){
 
   $('hRankText').textContent = 'Lv' + lv + ' ' + rkName;
   $('hPoints').textContent = points.toLocaleString('en-US');   // 顶栏给完整数字
-  $('hCombo').textContent = combo;
+  /* 连击从顶栏搬到这里：它才是「现在能拿多少分」的因，
+     和下面两行放在一起才说得通，断掉自然回 0。 */
+  $('rCombo').textContent = combo + ' 次';
+  const cLive = combo > 0;
+  $('rCombo').classList.toggle('live', cLive);
+  $('rCombo').classList.toggle('zero', !cLive);
 
   $('pPoints').textContent = fmtScore(points);                 // 面板用「万 / 亿」缩写
   $('pLv').textContent = 'Lv' + lv;
@@ -1208,7 +1670,7 @@ function render(){
 
   $('pct').textContent = rp.nxt ? Math.round(rp.t * 100) + '%' : '顶级';
   $('pTrack').style.width = (rp.t * 100).toFixed(1) + '%';
-  if(!penActive){                                   // 扣分提示展示期间不去覆盖它
+  if(!breakActive){                                 // 「连击断了」展示期间不去覆盖它
     $('pNote').textContent = rp.nxt
       ? ('还差 ' + fmtScore(rp.nxt[0] - points) + '分，到 Lv' + (rp.i + 2) + ' ' + rp.nxt[1])
       : '已是最高等级，继续累积就行';
@@ -1217,14 +1679,9 @@ function render(){
   }
   markRankMenu(rp.i);
 
-  $('sDone').textContent = doneCount;
-  $('sNew').textContent = total - doneCount;
-  $('qLeft').textContent = total + ' 个';
-
   // 计分规则（全部用实时数字说，不堆文字）
   const gain = gainAt(combo);
   $('rGain').textContent = '+' + gain.toLocaleString('en-US');
-  $('rCost').textContent = '−' + (gain * PENALTY_FACTOR).toLocaleString('en-US');
   const ng = nextGainAt(combo);
   if(ng){
     $('rNeed').textContent = ng.need.toLocaleString('en-US');
@@ -1242,9 +1699,10 @@ function render(){
 function buildRankMenu(){
   const m = $('rankMenu');
   m.innerHTML = '<div class="rmhead"><span>等级</span><span>起始积分</span></div>' +
-    RANKS.map(([min,name],i)=>
+    RANKS.map(([min,name,tag],i)=>
       '<div class="rrow" data-i="'+i+'" role="menuitem">'+
-        '<span class="nm"><em>Lv'+(i+1)+'</em>'+name+'</span>'+
+        '<span class="nm"><i class="rkdot" style="background:'+tintOf(i+1)[0]+'"></i><em>Lv'+(i+1)+'</em>'+name+
+          (tag && tag !== '—' ? '<i class="rtag">'+tag+'</i>' : '')+'</span>'+
         '<span class="need">'+fmtScore(min)+'</span>'+
       '</div>').join('');
 }
@@ -1274,16 +1732,18 @@ function toast(msg){
   toastTimer = setTimeout(()=>t.classList.remove('show'), 1600);
 }
 
-function flashPen(n){
+/* 答错时把「还差多少分」临时换成「连击断了」，1.3 秒后还原。
+   不再显示扣分数字——已经没有扣分了，还写「−7500」会让人以为在掉分。 */
+function flashBreak(){
   const el = $('pNote');
   if(!el) return;
-  penActive = true;
-  el.textContent = '答错 −' + n.toLocaleString('en-US') + ' 分';
-  el.style.color = 'var(--bad)';
+  breakActive = true;
+  el.textContent = '连击断了，分数不扣';
+  el.style.color = 'var(--ink2)';
   el.style.fontWeight = '600';
-  clearTimeout(penTimer);
-  penTimer = setTimeout(()=>{
-    penActive = false;
+  clearTimeout(breakTimer);
+  breakTimer = setTimeout(()=>{
+    breakActive = false;
     el.style.color = '';
     el.style.fontWeight = '';
     render();
@@ -1370,8 +1830,8 @@ async function importPayload(text){
   /* 在途状态清掉：作废排队中的答对回调，别让它推进刚导入的队列 */
   epoch++;
   locked = false;
-  clearTimeout(penTimer);
-  penActive = false;
+  clearTimeout(breakTimer);
+  breakActive = false;
 
   load();                  // 重新从存档恢复（内部会校验长度与身份）
   render();
@@ -1466,7 +1926,7 @@ $('dlgAsk').addEventListener('close', ()=>{
 });
 
 /* 任何弹窗开着都不答题：看字根表 / 正在确认破坏性操作时，手碰键盘不该被算一题
-   （错一次要扣 5 倍分，误触代价太大）。 */
+   （误触会白断一次连击，代价比想象中大）。 */
 function anyDialogOpen(){
   const a = $('dlgKb'), b = $('dlgAsk'), c = $('dlgHelp');
   return !!((a && a.open) || (b && b.open) || (c && c.open));
@@ -1475,7 +1935,7 @@ function anyDialogOpen(){
 /* ---------- 交互 ---------- */
 window.addEventListener('keydown', e=>{
   if(e.metaKey || e.ctrlKey || e.altKey) return;
-  if(e.repeat) return;                       // 长按不重复触发，否则按住错键会连续扣分
+  if(e.repeat) return;                       // 长按不重复触发，否则按住一个键会连打几十题
   const k = e.key.toUpperCase();
   if(/^[A-Z]$/.test(k)){
     e.preventDefault();
@@ -1485,7 +1945,7 @@ window.addEventListener('keydown', e=>{
 
 $('btnReset').addEventListener('click', async ()=>{
   const okGo = await askConfirm(
-    '分数、连击、等级、以及 328 张卡的熟练度全部清零，无法恢复。\n\n' +
+    '分数、连击、等级、328 张卡的熟练度、任务履历和连续签到全部清零，无法恢复。\n\n' +
     '如果只是想换台电脑接着练，请用下面的「导出进度」。',
     { title: '重置全部进度？', ok: '重置', danger: true });
   if(!okGo) return;
@@ -1494,9 +1954,14 @@ $('btnReset').addEventListener('click', async ()=>{
      少清一样就会出现「重置了但下一题还带着上一题的状态」。 */
   epoch++;                         // 作废排队中的答对回调，防止它推进刚重置的队列
   locked = false;
-  clearTimeout(penTimer);
-  penActive = false;
-  points = 0; combo = 0; maxCombo = 0; wrongs = 0;
+  clearTimeout(breakTimer);
+  breakActive = false;
+  points = 0; combo = 0; wrongs = 0;
+  daily = { day: dayKey(), count:0, wrongs:0, done:{}, claimed:{} };
+  totalHits = 0;
+  taskHist = { B:0, A:0, S:0, SSS:0 };
+  streak = { cur:0, best:0, last:'' };
+  selectedTask = 'B';
   queue = freshQueue();
   render(); save();
   toast('已重置');
@@ -1507,6 +1972,27 @@ $('fileIn').addEventListener('change', e=>{
   const f = e.target.files && e.target.files[0];
   if(f) importProgress(f);
   e.target.value = '';            // 清空，这样同一个文件能再选一次
+});
+
+/* ---------- 任务条交互 ---------- */
+$('taskBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  setTaskMenu(!$('taskMenu').classList.contains('show'));
+});
+$('taskMenu').addEventListener('click', e => {
+  e.stopPropagation();
+  const row = e.target.closest('[data-t]');
+  if(!row) return;
+  selectedTask = row.dataset.t;
+  setTaskMenu(false);
+  render(); save();
+});
+document.addEventListener('click', () => setTaskMenu(false));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') setTaskMenu(false); });
+
+$('claimBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  claimTask(selectedTask);
 });
 
 $('mnemonicToggle').addEventListener('click', ()=>{
@@ -1527,14 +2013,27 @@ document.addEventListener('click', ()=>setRankMenu(false));
 document.addEventListener('keydown', e=>{ if(e.key === 'Escape') setRankMenu(false); });
 
 /* ---------- 启动 ---------- */
-const firstVisit = localStorage.getItem(SAVE_KEY) === null;   // 还没有任何存档
+/* localStorage 在「阻止所有 Cookie」/ 某些隐私模式下连 getItem 都会抛 SecurityError。
+   裸调一次就白屏，所以这里必须兜住：读不到就当第一次来。 */
+let firstVisit = true;
+try{ firstVisit = localStorage.getItem(SAVE_KEY) === null; }catch(e){ firstVisit = true; }
 load();
+ensureToday();
 renderKeyboard();
 buildRankMenu();
+buildTaskMenu();
 render();
 /* 第一次打开的人身边没人教，直接把说明摊开。
    有存档的老用户不打扰——他们点右上角那个按钮就行。 */
 if(firstVisit) openHelp();
+
+/* 页面在后台放了一夜再切回来：日界可能已经过了，数字却还停在前一天。
+   切回前台时补一次检查——不补的话，早上看到的是昨晚的 0/500。 */
+document.addEventListener('visibilitychange', ()=>{
+  if(document.hidden) return;
+  if(ensureToday()) save();
+  render();
+});
 </script>
 </body>
 </html>
