@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <!--
-  五笔字根练习 · 86 版  v1.1.18
+  五笔字根练习 · 86 版  v1.1.23
   作者：IHQI
 
   单文件、零依赖、零外链。双击即可离线使用。
 
-  数据来源与许可（每条都核过原始出处，不是照抄别人的说法）：
-  · 字根字形：303 个 SVG 路径由 sdcb/wubi86-viewer 仓库里的字根字体
-    黑体字根.ttf（U+E000–E290 私用区）转出轮廓，合并为 path 指令。
-    上游仓库整体以 AGPL-3.0 发布：https://github.com/sdcb/wubi86-viewer
-  · 字根名称（含「青字头」「鱼头」这类非成字字根名）：同上仓库 root-names.json
-  · 口诀文字、五区配色（横红 · 竖橙 · 撇绿 · 点蓝 · 折紫）：同上仓库
-  · 字根口诀为五笔 86 方案（王永民，1983），属公有领域的事实性内容
-  · 键名汉字、一级简码同理，属五笔方案本身，不构成他人作品
-
-  未采用（上游另列的三项；本工具无对应功能，故不承担其许可义务）：
-  × 微软五笔词库 ChsWubiNew.lex —— 不查编码与候选顺序
-  × sdcb/search-wubi 拆解、识别码 —— 不拆字
-  × Make Me a Hanzi 笔画矢量（Arphic Public License）—— 不画笔画
-
-  字体出处（断点）：黑体字根.ttf 的 name 表无版权字段，只有 Version 1.00 / 2022-05-12。
-  已核对：OS/2 fsType=8（允许可编辑嵌入）、vendor `MS  `、带 fpgm/prep/cvt 提示程序、
-  upem 2048、690 个字形全映射在 PUA —— 属现成黑体子集化后重映射，来源上游未注明。
-  本项目分发的是字形轮廓数据，不是字体文件。权利人如有异议，改用自绘字形。
+  数据来源：
+  · 字根字形（303 条 SVG 路径）、字根名称、口诀、五区配色：
+    sdcb/wubi86-viewer（AGPL-3.0）仓库里的字根字体「黑体字根」，U+E000–E290。
+    分发的是转出的轮廓数据，不是字体文件；该字体上游未注明出处，如有异议改自绘字形。
+  · 键名汉字、一级简码、字根口诀：五笔 86 方案（王永民，1983），公有领域。
+  未采用：微软五笔词库、sdcb/search-wubi 拆解数据、Make Me a Hanzi 笔画矢量（本工具无对应功能）。
 
   许可：
   Copyright (C) 2026 IHQI
@@ -38,7 +26,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>五笔字根 · 86 版 v1.1.18</title>
+<title>五笔字根 · 86 版 v1.1.23</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%22.62%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23414E6B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23232A3A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20x%3D%220%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23C0504D%22%2F%3E%3Crect%20x%3D%226.4%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23D08A1E%22%2F%3E%3Crect%20x%3D%2212.8%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%233E9E67%22%2F%3E%3Crect%20x%3D%2219.2%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%234A7FC8%22%2F%3E%3Crect%20x%3D%2225.6%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%237B5DB5%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.16%2012.21V13.85H13.39L12.27%2019.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15%208.84H22.66V7.2H9.32V8.84H14.44L13.73%2012.21H10.16ZM13.97%2019.15%2015.09%2013.85H19.06V19.15H13.97Z%22%20fill%3D%22%23FAFBFE%22%2F%3E%3C%2Fsvg%3E">
 <meta name="description" content="五笔 86 版字根练习：303 个字根 + 25 个一级简码共 328 道题，按熟练度排队出题。单文件、离线可用、零外链，进度存在本地。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%2316181D%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223.4%22%20text-anchor%3D%22middle%22%20font-family%3D%22Songti%20SC%2CSTSong%2CSimSun%2Cserif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%3E%E4%BA%94%3C%2Ftext%3E%3C%2Fsvg%3E">
@@ -731,7 +719,7 @@
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.18</span></span></div>
+  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.23</span></span></div>
   <div class="hstats">
     <div class="rankwrap">
       <button class="rank" id="rankBtn" type="button" aria-haspopup="true" aria-expanded="false">
@@ -825,104 +813,52 @@
       <button class="hpclose" id="hpClose" type="button" aria-label="关闭">✕</button>
     </div>
     <div class="hpscroll" id="hpscroll" tabindex="-1">
-
       <section class="hp-sec">
         <div class="hp-h"><i>1</i>这是什么</div>
-        <p>把五笔 86 版的 <b>303 个字根</b>和 <b>25 个一级简码</b>编成 328 道题，按记忆曲线排队出题。
-           练的是「看到字根，知道该按哪个键」——不是拆字，也不是打字速度。</p>
+        <p>86 版五笔的 303 个字根和 25 个一级简码，共 328 题，按熟练度排队出题。
+           练的是「看到字根，知道按哪个键」，适合已经会五笔指法的人。</p>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>2</i>怎么练</div>
+        <div class="hp-h"><i>2</i>怎么用</div>
         <ul>
-          <li>屏幕中间出现一个字根，<b>按它所在的字母键</b>，键盘图上对应位置会亮一下。</li>
-          <li>第一次碰到的、以及刚打错的，会直接给答案：正确键位、区名和口诀。</li>
-          <li>打错<b>不会跳过</b>——那张卡留在队首，必须打对才往后走，同时连击归零、这一题不给分。</li>
-          <li>25 个一级简码（一地在要工…）也混在题里，答法和字根一样，按对应字母键。</li>
+          <li>按字根所在的字母键。第一次遇到和刚打错的，会直接给出键位与口诀。</li>
+          <li>打错不换题，打对才往后走。Z 是万能键，不判题，也不影响分数与连击。</li>
+          <li>点键盘上任意键位，可查该键的全部字根与简码。</li>
         </ul>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>3</i>键盘与速查</div>
+        <div class="hp-h"><i>3</i>计分</div>
         <ul>
-          <li>键盘按五个区分色：<b>横区红 · 竖区橙 · 撇区绿 · 点区蓝 · 折区紫</b>。</li>
-          <li><b>点任意键位</b>，弹出这一键的全部字根和它的简码；当前这道题会描边。</li>
-          <li>打字区那个字始终是黑色，不随区变色——它是要盯着比对的对象。</li>
+          <li>答对得 <span class="hp-tag">1 × 连击档位</span> 分，右栏「计分规则」实时显示当前档位。</li>
+          <li>答错不得分、不扣分，连击归零，熟练度退两档，不会打回起点。</li>
         </ul>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>4</i>计分</div>
+        <div class="hp-h"><i>4</i>段位与任务</div>
         <ul>
-          <li>答对得 <span class="hp-tag">1 × 连击档位</span> 分。连击越高，每次得分越多。</li>
-          <li>答错<b>不得分、连击归零，但不扣分</b>——分数只增不减。
-              所以尽管去练不熟的字根，打错不会有任何损失；连击断了下一题从头攒。</li>
-          <li>右栏「计分规则」面板实时显示当前值，不用记这些数。</li>
+          <li>段位共 50 级，明代科举到文官品级。点右上角的段位名，可看完整阶梯与所需积分。</li>
+          <li>每日任务四档共用今日计数，答对才计数，每天 06:00 清零；达标点「领取」，按当前总分百分比加分。</li>
         </ul>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>5</i>段位</div>
-        <p>共 50 级，走的是<b>明代科举 + 文官品级</b>：从 Lv1「白身」一路考到 Lv50「首辅」。
-           <b>点右上角的段位名</b>可以看完整阶梯、每级的品级，以及需要多少积分。</p>
-        <p>前 16 级是功名（白身 → 童生 → 生员 → 举人 → 进士 → 状元），科举阶段没有品级，
-           标签写的是考试名目；第 17 级授官以后，标签换成品级。</p>
-        <p>品级依《大明会典》：<b>尚书正二品、侍郎正三品</b>（这两条和清代不同），
-           大学士本官只有正五品、靠加衔才到一品，所以顶上直接列「首辅」——例加太师衔的中极殿大学士。
-           每五级换一次颜色，一个颜色就是一个身份阶段。</p>
-        <p>难度上，前八级是起步坡（举人约一小时），之后每五级门槛翻一倍。
-           按每天练一小时、准确率 98% 算，考到「状元」约需三四小时，官至「首辅」约需一年。
-           满级之后分数照旧累积——那时比的就是连击能挂多长，准确率 99% 以上的人
-           每题能拿十几二十分，练上几年可以到几千万分。</p>
+        <div class="hp-h"><i>5</i>存档</div>
+        <p>进度自动存在浏览器本地。换设备用「导出进度」存成 json，在新环境「导入进度」恢复。
+           清除浏览器数据会丢进度。</p>
       </section>
 
       <section class="hp-sec">
-        <div class="hp-h"><i>6</i>每日任务与签到</div>
-        <ul>
-          <li>上方那条进度是<b>今日任务</b>：B 级 500 题 · A 级 2000 题 · S 级 5000 题 · SSS 级 10000 题。
-              点任务名换档，四档<b>共用同一个今日计数</b>，换档不清零（打到 800 再切 A 级，显示的就是 800/2000）。</li>
-          <li><b>只有答对才算数</b>，打错不加进度、也不扣进度——任务是督促练习，不是凑按键次数。</li>
-          <li>每天<b>凌晨 6 点</b>清零。熬夜两点练完仍算前一天，不会把连续签到判成断了。</li>
-          <li>达标后点「领取」拿奖励：<b>给总分加上</b> B 1% · A 1.5% · S 2.5% · SSS 4%
-              （就是「领取那一刻的总分 × 这个百分比」，菜单底部也写着这句）。
-              每档每天各一份，<b>不点就不领</b>，过了 6 点作废。</li>
-          <li>当天完成过一次 B 级任务就算签到一天。顶栏显示当前连续天数；<b>断签后立刻显示 0</b>，
-              当天再打满 B 级才算第 1 天。「最长」一直留着做记录。右栏「任务履历」是各档累计完成次数，只增不减。</li>
-        </ul>
+        <div class="hp-h"><i>6</i>来源与许可</div>
+        <p>字形、字根名、口诀、配色取自
+           <a href="https://github.com/sdcb/wubi86-viewer" target="_blank" rel="noopener">sdcb/wubi86-viewer</a>
+           （AGPL-3.0）；分发的是其字根字体转出的矢量轮廓，不含字体文件。五笔 86 方案（王永民，1983）属公有领域。</p>
+        <p>本页以 <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a> 授权，
+           无构建、无压缩，源码即本文件：
+           <a href="https://github.com/snihqi/wubi86-roots" target="_blank" rel="noopener">snihqi/wubi86-roots</a>。</p>
       </section>
-
-      <section class="hp-sec">
-        <div class="hp-h"><i>7</i>进度存在哪</div>
-        <ul>
-          <li>自动存在浏览器本地，关掉页面再打开，接着上次继续。</li>
-          <li>换电脑或重装系统：右下角<b>「导出进度」</b>存成一个 json 文件，
-              在新环境用<b>「导入进度」</b>恢复。</li>
-          <li><b>清除浏览器数据会丢进度</b>，练得久了记得导出留一份。</li>
-        </ul>
-      </section>
-
-      <section class="hp-sec">
-        <div class="hp-h"><i>8</i>几点提醒</div>
-        <ul>
-          <li>这是给<b>已经会五笔指法</b>的人练熟字根用的。还不会拆字的话，先学基本规则再来。</li>
-          <li><b>Z 是万能键</b>，按它不算对也不算错，分数和连击都不动。</li>
-          <li>「重置全部进度」会清空分数、连击、全部熟练度、任务履历和连续签到，等于删档重来，不能撤销。</li>
-        </ul>
-      </section>
-
-      <section class="hp-sec">
-        <div class="hp-h"><i>9</i>来源与许可</div>
-        <p><b>字形、字根名称、口诀、分区配色</b>：<a href="https://github.com/sdcb/wubi86-viewer" target="_blank" rel="noopener">sdcb/wubi86-viewer</a>
-           （AGPL-3.0）。303 条轮廓路径取自其字根字体「黑体字根」（U+E000–E290），为矢量数据，不含字体文件。</p>
-        <p><b>该字体出处</b>：上游未注明。字体表特征（允许可编辑嵌入、带提示程序、690 个字形全映射在私用区）
-           表明它由现成黑体子集化后重映射而成。权利人如有异议，改用自绘字形。</p>
-        <p><b>未采用</b>：微软五笔词库、search-wubi 拆解数据、Make Me a Hanzi 笔画矢量（Arphic Public License）。
-           本工具无编码查询、拆字、笔顺功能，上述许可义务不适用。</p>
-        <p><b>五笔 86 方案</b>：王永民，1983。键名、一级简码、字根口诀属公有领域。</p>
-        <p><b>本页许可</b>：<a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a>。
-           无构建、无压缩，源码即此文件：<a href="https://github.com/snihqi/wubi86-roots" target="_blank" rel="noopener">snihqi/wubi86-roots</a>。</p>
-      </section>
-
     </div>
   </div>
 </dialog>
@@ -1013,11 +949,12 @@ const TAIL_FROM = 8;             // 第 9 次起 → 队尾
 const TP_STEPS = [[10,2],[20,4],[30,6],[40,10],[50,15],[100,20],[200,30],
                   [300,50],[500,100],[1000,1000],[2000,2000],[3000,3000],
                   [5000,10000],[10000,20000]];
-function gainAt(c){ return TP(c + 2); }        // 下一次答对能得多少（answer() 里 combo 先 +1）
-/* 「再连对 N 次 = +M」里的 N 是「还要答对几次」，不是「连击还差几点」。
-   下一次答对得 gainAt(c) = TP(c+2)；第 k 次答对得 TP(c+k+1)，
-   而 TP 的判定是「大于阈值 t」，所以拿到 g 要 c+k+1 > t，即 k = t - c。
-   原来写的是 (t-1)-c，整体少 1：连击 0 时界面说「再连对 9 次 +2」，实际要第 10 次。 */
+function gainAt(c){ return TP(c + 1); }   /* 刚才那一题实得；下一题才可能是更高一档 */
+/* 右栏那两行是一个整体，必须同一套口径，否则倒数会跳（用户报过：倒数到 2，再对一次变成 11）。
+   · 「现在每次答对」= 刚才这一题实得多少 = TP(c+1)。
+     不能写成 TP(c+2)：那是「下一题能得多少」，会比实际得分早一档显示，倒数就少走一步。
+   · 「再连对 N 次 = +M」的 N 是「还要答对几次」：第 k 次答对得 TP(c+k+1)，
+     TP 判定是「大于阈值 t」，要拿到 M 需要 c+k+1 > t，即 k = t - c。 */
 function nextGainAt(c){
   const cur = gainAt(c);
   for(const [t, g] of TP_STEPS){
@@ -1117,7 +1054,9 @@ function fmtScore(n){
   if(n < 10000) return n.toLocaleString('en-US');
   if(n < 1e8){
     const w = n / 1e4;
-    return (w >= 100 ? Math.round(w) : +w.toFixed(2)) + '万';
+    const s = (w >= 100 ? Math.round(w) : +w.toFixed(2));
+    // 99,995,000 以上取整是 10000 —— 不能写「10000万」，进位成「1亿」
+    return s >= 10000 ? '1亿' : s + '万';
   }
   return +(n / 1e8).toFixed(2) + '亿';
 }
@@ -1261,10 +1200,11 @@ function save(){
       daily, totalHits, taskHist, streak, selectedTask
     }));
   }catch(e){
-    /* 存储被禁用 / 空间满：静默失败最伤人（打一晚全丢），所以提示一次 */
+    /* 存储被禁用 / 空间满：静默失败最伤人（打一晚全丢），所以提示一次。
+       「数据异常」也走这里，所以别把原因写死成浏览器设置。 */
     if(!saveWarned){
       saveWarned = true;
-      toast('进度保存失败：浏览器不允许本地存储');
+      toast('进度保存失败：本地存储不可用，或存档数据异常');
     }
   }
 }
@@ -1384,6 +1324,7 @@ function answer(key){
     return;
   }
   const cur = queue[0];
+  if(!cur) return;                          // 队列空（理论上不会）时宁可没反应，也别抛异常白屏
   const right = pool[cur.pi].key;
   if(key === right){
     // 答对：先亮灯，110ms 后再计分＋推进（分数与队列同进同退，不会一边涨一边没动）
@@ -1405,8 +1346,9 @@ function answer(key){
       if(justDone) toast(justDone.label + '任务完成，可以领取 ' + justDone.pct + '% 奖励');
     }, 110);
   } else {
-    // 答错：清零 + 原地重来（题目留在队首，一步都不往后挪）
-    cur.count = -1;
+    // 答错：熟练度退两档 + 原地重来（题目留在队首，一步都不往后挪）
+    // 不清零：手滑一次就退回起点太伤人，见单字版同名逻辑
+    cur.count = cur.count < 0 ? -1 : Math.max(0, cur.count - 2);
     cur.failed = true;
     /* 答错只做两件事：不得分、连击归零。
        不扣分是刻意的——原来错一次要倒扣「当前得分 × 5」，后期一次几万分，
@@ -1635,8 +1577,8 @@ function render(){
      区色只用在周边信息上：口诀前缀、答案行、键位方块。 */
   $('card').style.setProperty('--gc', 'var(--z' + p.zone + ')');
   renderGlyph(p);
-  $('card').classList.toggle('bad', cur.count < 0 && cur.failed);   // 只有真答错才变粉；新卡不加告警色
-  const showCode = cur.count < 0;                   // 第一次遇到 / 刚打错 → 给答案
+  $('card').classList.toggle('bad', cur.failed);   // 只有真答错才变粉；新卡不加告警色
+  const showCode = cur.count < 0 || cur.failed;     // 第一次遇到 / 刚打错 → 给答案
   $('answerline').textContent = showCode ? ('正确键位  ' + p.code + '  ' + p.key) : '';
   $('mnemonic').innerHTML = showMn
     ? ('<i class="zname">' + ZONE_NAME[p.zone] + '</i>' + p.mn +
