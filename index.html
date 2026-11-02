@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  五笔字根练习 · 86 版  v1.1.17
+  五笔字根练习 · 86 版  v1.1.18
   作者：IHQI
 
   单文件、零依赖、零外链。双击即可离线使用。
@@ -38,7 +38,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>五笔字根 · 86 版 v1.1.17</title>
+<title>五笔字根 · 86 版 v1.1.18</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%22.62%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23414E6B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23232A3A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20x%3D%220%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23C0504D%22%2F%3E%3Crect%20x%3D%226.4%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23D08A1E%22%2F%3E%3Crect%20x%3D%2212.8%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%233E9E67%22%2F%3E%3Crect%20x%3D%2219.2%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%234A7FC8%22%2F%3E%3Crect%20x%3D%2225.6%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%237B5DB5%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.16%2012.21V13.85H13.39L12.27%2019.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15%208.84H22.66V7.2H9.32V8.84H14.44L13.73%2012.21H10.16ZM13.97%2019.15%2015.09%2013.85H19.06V19.15H13.97Z%22%20fill%3D%22%23FAFBFE%22%2F%3E%3C%2Fsvg%3E">
 <meta name="description" content="五笔 86 版字根练习：303 个字根 + 25 个一级简码共 328 道题，按熟练度排队出题。单文件、离线可用、零外链，进度存在本地。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%2316181D%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223.4%22%20text-anchor%3D%22middle%22%20font-family%3D%22Songti%20SC%2CSTSong%2CSimSun%2Cserif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%3E%E4%BA%94%3C%2Ftext%3E%3C%2Fsvg%3E">
@@ -177,7 +177,7 @@
   .taskbtn svg{opacity:.5;transition:transform .15s}
   .taskbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
   .taskmenu{
-    display:none;position:absolute;left:0;top:calc(100% + 6px);width:238px;
+    display:none;position:absolute;left:0;top:calc(100% + 6px);width:252px;
     background:var(--card);border:1px solid var(--line);border-radius:12px;padding:5px;z-index:60;
     box-shadow:0 4px 12px rgba(16,24,40,.06),0 16px 36px -10px rgba(16,24,40,.18);
   }
@@ -200,6 +200,13 @@
   .trow .tg{flex:1;font-size:11px;color:var(--ink3)}
   .trow.on .tg{color:#63738C}
   .trow .tp{font-family:Inter,sans-serif;font-size:11.5px;color:#2F7D51;font-weight:600}
+  /* 「1%」光看数字不知道是什么的百分比，前面挂一个小字「总分」——
+     用的是顶栏那个词（总分），一眼能对上 */
+  .trow .tp i{font-style:normal;font-weight:400;font-size:10.5px;color:var(--ink3);margin-right:2px}
+  .trow.on .tp i{color:#63738C}
+  /* 菜单底部一行：奖励按什么算。没有这句，「总分 1%」还是不知道乘在哪个数上 */
+  .tmfoot{margin:2px 4px 1px;padding:6px 9px 2px;border-top:1px solid var(--line);
+    font-size:10.5px;line-height:1.55;color:var(--ink3)}
   .trow.on .tp{color:#22684A}
   .trow.got .tp::after{content:" ✓"}
   .status .tnum{font-family:Inter,sans-serif;font-size:12.5px;color:var(--ink2);white-space:nowrap;min-width:74px;text-align:right}
@@ -724,7 +731,7 @@
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.17</span></span></div>
+  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.18</span></span></div>
   <div class="hstats">
     <div class="rankwrap">
       <button class="rank" id="rankBtn" type="button" aria-haspopup="true" aria-expanded="false">
@@ -876,10 +883,11 @@
               点任务名换档，四档<b>共用同一个今日计数</b>，换档不清零（打到 800 再切 A 级，显示的就是 800/2000）。</li>
           <li><b>只有答对才算数</b>，打错不加进度、也不扣进度——任务是督促练习，不是凑按键次数。</li>
           <li>每天<b>凌晨 6 点</b>清零。熬夜两点练完仍算前一天，不会把连续签到判成断了。</li>
-          <li>达标后点「领取」拿奖励：B 1% · A 1.5% · S 2.5% · SSS 4%，按<b>点下去那一刻的总分</b>算。
+          <li>达标后点「领取」拿奖励：<b>给总分加上</b> B 1% · A 1.5% · S 2.5% · SSS 4%
+              （就是「领取那一刻的总分 × 这个百分比」，菜单底部也写着这句）。
               每档每天各一份，<b>不点就不领</b>，过了 6 点作废。</li>
-          <li>当天完成过一次 B 级任务就算签到一天。顶栏显示当前连续天数；断签从 1 重算，
-              「最长」一直留着做记录。右栏「任务履历」是各档累计完成次数，只增不减。</li>
+          <li>当天完成过一次 B 级任务就算签到一天。顶栏显示当前连续天数；<b>断签后立刻显示 0</b>，
+              当天再打满 B 级才算第 1 天。「最长」一直留着做记录。右栏「任务履历」是各档累计完成次数，只增不减。</li>
         </ul>
       </section>
 
@@ -1006,11 +1014,15 @@ const TP_STEPS = [[10,2],[20,4],[30,6],[40,10],[50,15],[100,20],[200,30],
                   [300,50],[500,100],[1000,1000],[2000,2000],[3000,3000],
                   [5000,10000],[10000,20000]];
 function gainAt(c){ return TP(c + 2); }        // 下一次答对能得多少（answer() 里 combo 先 +1）
+/* 「再连对 N 次 = +M」里的 N 是「还要答对几次」，不是「连击还差几点」。
+   下一次答对得 gainAt(c) = TP(c+2)；第 k 次答对得 TP(c+k+1)，
+   而 TP 的判定是「大于阈值 t」，所以拿到 g 要 c+k+1 > t，即 k = t - c。
+   原来写的是 (t-1)-c，整体少 1：连击 0 时界面说「再连对 9 次 +2」，实际要第 10 次。 */
 function nextGainAt(c){
   const cur = gainAt(c);
   for(const [t, g] of TP_STEPS){
-    if(c >= t - 1) continue;
-    if(g > cur) return { need:(t - 1) - c, gain:g };
+    if(c >= t) continue;
+    if(g > cur) return { need:t - c, gain:g };
   }
   return null;
 }
@@ -1097,11 +1109,16 @@ function tintOf(lv){
 
 /* 积分缩写：一万以下原样，之上用「万 / 亿」，最多两位小数并去掉末尾 0
    注意 9999.999 万四舍五入后是 10000 万，要进位成「1亿」 */
+/* 两版必须一致（面板、菜单、领取提示都读它）。规则：
+   <1 万给完整数字；1 万–1 亿用「万」，过百万就取整（116.97万 难读，写 117万）；
+   ≥1 亿用「亿」。原来的写法把 99,999,999 舍成「1亿」，差一位数。 */
 function fmtScore(n){
   n = Math.max(0, Math.round(n || 0));
   if(n < 10000) return n.toLocaleString('en-US');
-  const w = +(n / 1e4).toFixed(2);
-  if(w < 10000) return w + '万';
+  if(n < 1e8){
+    const w = n / 1e4;
+    return (w >= 100 ? Math.round(w) : +w.toFixed(2)) + '万';
+  }
   return +(n / 1e8).toFixed(2) + '亿';
 }
 
@@ -1137,7 +1154,9 @@ let locked = false;
 let epoch = 0;          // 队列「世代号」：重置时 +1，作废还在排队中的答对回调
 
 /* 建池：25 键轮流发牌，一简按固定间隔插进去
-   目标：① 不连着按同一个键 ② 不连着打同一个区 ③ 每个键的主字根先出、变体后出 */
+   目标：① 不连着按同一个键 ② 不连着打同一个区 ③ 同一个键内按字根表原顺序
+   （原来这里写「主字根先出、变体后出」——并没有实现，字根表里没有「主字根」这个字段，
+    G 键第一张是「一」而不是「王」，M 键第一张是「几」而不是「山」。要么改注释，要么改数据。）*/
 function buildPool(){
   /* 键序按「位优先」：G H T Y N / F J R U B / D K E I V / S L W O C / A M Q P X
      这样每 5 张正好走完横竖撇捺折各一次，不会出现「前 20 张全在横区」 */
@@ -1523,6 +1542,12 @@ function prevDayKey(k){
 /* 每次渲染/记账前过一遍：跨了学习日就把今日清零。返回是否发生了跨日。 */
 function ensureToday(){
   const k = dayKey();
+  /* 断签即时归零：上次签到既不是今天也不是昨天，连续数就该是 0（最长保留）。
+     只在 touchStreak 里算是错的——顶栏直接读 streak.cur，那样断签后要等今天
+     打满 B 级才会变，中间一直挂着旧的天数，和说明里「断签从 1 重算」不符。 */
+  if(streak.cur > 0 && streak.last && streak.last !== k && streak.last !== prevDayKey(k)){
+    streak.cur = 0;
+  }
   if(daily.day === k) return false;
   daily.day = k;
   daily.count = 0;
@@ -1586,9 +1611,10 @@ function buildTaskMenu(){
     return '<div class="trow' + (x.id === selectedTask ? ' on' : '') + (got ? ' got' : '') + '" data-t="' + x.id + '" role="menuitem">' +
              '<span class="tn">' + x.label + '</span>' +
              '<span class="tg">' + tail + '</span>' +
-             '<span class="tp">' + x.pct + '%</span>' +
+             '<span class="tp"><i>总分</i>+' + x.pct + '%</span>' +
            '</div>';
-  }).join('');
+  }).join('') +
+  '<div class="tmfoot">奖励加进<b>总分</b>，按点「<span style="white-space:nowrap">领取</span>」时算</div>';
 }
 
 function setTaskMenu(open){
@@ -1635,7 +1661,15 @@ function render(){
   $('qWrong').textContent = daily.wrongs;
 
   const canClaim = daily.count >= tk.need && !daily.claimed[tk.id];
-  $('claimBtn').textContent = daily.claimed[tk.id] ? '已领取' : ('领取 ' + tk.pct + '%');
+  $('claimBtn').textContent = daily.claimed[tk.id] ? '已领取' : ('领取 总分+' + tk.pct + '%');
+  /* 悬停给个确切数字：百分比换算成「现在能加多少分」，不用自己算 */
+  const claimGain = Math.round(points * tk.pct / 100);
+  $('claimBtn').title = daily.claimed[tk.id]
+    ? (tk.label + ' 的奖励今天已领取，明天 06:00 后可再领')
+    : canClaim
+      ? ('给总分加上 ' + tk.pct + '% —— 按当前 ' + fmtScore(points) + ' 分算，是 +' + fmtScore(claimGain) + ' 分')
+      : ('还差 ' + Math.max(0, tk.need - daily.count) + ' 题。打满后点这里，总分加上 ' + tk.pct +
+         '%（按点下去那一刻的总分算，现在约 +' + fmtScore(claimGain) + ' 分）');
   $('claimBtn').disabled = !canClaim;
   $('claimBtn').classList.toggle('pulse', canClaim);
 
@@ -1810,6 +1844,12 @@ async function importPayload(text){
      宁可明确拒绝，也不要交出一份「导入成功、其实全错」的进度。 */
   if(n !== pool.length){
     toast('导入失败：这是 ' + n + ' 张卡的旧版进度，和现在的 ' + pool.length + ' 张编号对不上');
+    return false;
+  }
+  /* 条数必须成对。counts 短了，restoreQueue 会把尾部那些卡当新卡——不报错、
+     但熟练度悄悄归零，正是这套代码一直想避免的「导入成功、其实少了一半」。 */
+  if(data.counts.length !== n){
+    toast('导入失败：队列 ' + n + ' 张，熟练度只有 ' + data.counts.length + ' 条，文件不完整');
     return false;
   }
   const fpts = (typeof data.points === 'number') ? fmtScore(data.points) + ' 分' : '未知分数';
