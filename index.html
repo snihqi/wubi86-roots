@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  五笔字根练习 · 86 版  v1.1.23
+  五笔字根练习 · 86 版  v1.1.27
   作者：IHQI
 
   单文件、零依赖、零外链。双击即可离线使用。
@@ -26,37 +26,75 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>五笔字根 · 86 版 v1.1.23</title>
+<title>五笔字根 · 86 版 v1.1.27</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%22.62%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23414E6B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23232A3A%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227.5%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Cg%20clip-path%3D%22url%28%23c%29%22%3E%3Crect%20x%3D%220%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23C0504D%22%2F%3E%3Crect%20x%3D%226.4%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%23D08A1E%22%2F%3E%3Crect%20x%3D%2212.8%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%233E9E67%22%2F%3E%3Crect%20x%3D%2219.2%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%234A7FC8%22%2F%3E%3Crect%20x%3D%2225.6%22%20y%3D%2228.8%22%20width%3D%226.4%22%20height%3D%223.2%22%20fill%3D%22%237B5DB5%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.16%2012.21V13.85H13.39L12.27%2019.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15%208.84H22.66V7.2H9.32V8.84H14.44L13.73%2012.21H10.16ZM13.97%2019.15%2015.09%2013.85H19.06V19.15H13.97Z%22%20fill%3D%22%23FAFBFE%22%2F%3E%3C%2Fsvg%3E">
 <meta name="description" content="五笔 86 版字根练习：303 个字根 + 25 个一级简码共 328 道题，按熟练度排队出题。单文件、离线可用、零外链，进度存在本地。">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%2316181D%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223.4%22%20text-anchor%3D%22middle%22%20font-family%3D%22Songti%20SC%2CSTSong%2CSimSun%2Cserif%22%20font-size%3D%2220%22%20font-weight%3D%22700%22%20fill%3D%22%23FFFFFF%22%3E%E4%BA%94%3C%2Ftext%3E%3C%2Fsvg%3E">
 <style>
-  :root{
-    /* 亮度回到 v1.1.3 的水平（用户实测后觉得那版更清爽）。 */
-    --bg:#EAF0F8; --card:#FCFCFD; --line:#E5E8EF; --ink:#16181D;
-    /* 大字形专用色：比正文墨色浅一档、偏冷一点点。
-       112px 的黑字压在白卡上对比接近 18:1，长时间盯着边缘会发酸；
-       这个约 12:1，形状边界仍然干脆，但不刺眼。 */
+    :root{
+    color-scheme:light;
+    /* 表面与描边 */
+    --bg:#EAF0F8; --bg-1:#EEF2F9; --bg-2:#DEE5F0;
+    --card:#FCFCFD; --card-2:#FBFBFC; --card-3:#FFFFFF;
+    --hover:#F7F8FA; --hover-2:#F5F6F8; --hover-5:#F0F4FA;
+    --chip:#F1F3F6; --chip-2:#F1F2F4; --dim:#F4F5F7;
+    --line:#E5E8EF; --line-2:#E1E4EA; --line-3:#D6DAE2; --line-4:#D5DDEA; --line-5:#D4DCEA;
+    --line-6:#D2D7E0; --line-7:#CFD8E7; --line-8:#E4E7EE; --line-9:#E7E9EE; --line-10:#EAEDF1;
+    --line-11:#C6D0E2; --line-13:#B6BCC7;
+    --scroll:#CDD3DB; --scroll-hi:#B4BBC6;
+    /* 文字。--glyph 给速查表里的小字根（46px）；--glyph-big 只给题面那个大字。
+       104px 的实心笔画用满对比会把整屏压住，比 --glyph 再退半档 */
+    --ink:#16181D; --ink2:#5F6673; --ink3:#9AA1AE; --ink-3b:#8A919E; --ink4:#C4C9D2; --ink-5:#7C8493;
     --glyph:#2B3344;
-    /* ---------- 主题色板 ----------
-       全场只认一个主题蓝，进度条、选中态、可点项都用它；
-       其余颜色都是它的「冷色邻居」，只出现在「面板左边条」和「任务档位胶囊」上。
-       暖色一律不进 UI：金棕在浅底上会读成褐，红橙会和键盘的横/撇两区抢含义。 */
-    --accent:#5C82C6;        /* 主题蓝：两根进度条 / 菜单选中 / 积分面板 */
-    --accent-teal:#3E9E9A;   /* 青：任务履历面板 */
-    --accent-slate:#7A8798;  /* 石板灰：计分规则面板（最次要） */
-    --bar-task:var(--accent);
-    --bar-pt:var(--accent);
-    --ink2:#5F6673; --ink3:#9AA1AE; --ink4:#C4C9D2;
-    --ok:#16A34A;            /* 达标 / 可领取（键帽答对也用这个绿） */
+    --glyph-big:#3F4859;
+    /* 主题蓝：进度条 / 选中态 / 面板左条。暖色不进 UI，会和键盘的五区抢含义 */
+    --accent:#5C82C6; --accent-teal:#3E9E9A; --accent-slate:#7A8798;
+    --bar-task:var(--accent); --bar-pt:var(--accent);
+    --link:#4A6FA8; --link-hi:#2F4E7A; --link-line:#C3D0E4; --link-line-hi:#8FA6C6;
+    /* 反色块（当前标签 / 主按钮 / toast）：墨底白字，深色下自动翻过来 */
+    --sel-bg:#E6EDFA; --sel-ink:#28466F; --sel-ink-2:#63738C;
+    --solid:#16181D; --solid-hi:#2A2E37; --on-solid:#FFFFFF;
+    /* 对 / 错。/ 达标 */
+    --ok:#16A34A; --ok-fill:#16A34A; --on-ok:#FFFFFF;
+    --ok-bg:#EAF8EF; --ok-bg-2:#DCF3E4;
+    --ok-line:#B7E2C6; --ok-line-2:#9FD5B4;
+    --ok-ink:#1F7A46; --ok-ink-2:#22684A; --ok-ink-3:#2F7D51;
+    --bar-full:#2F9E62;
     --bad:#DC2626;
-    /* 五区配色，取自 sdcb/wubi86-viewer：横红 · 竖橙 · 撇绿 · 点蓝 · 折紫。
-       主色用于字根填充与键位字母，淡底用于键帽背景。 */
+    --bad-bg:#FCE7E7; --bad-bg-2:#F8D2D2; --bad-bg-3:#F3C2C2; --bad-bg-4:#FEF2F2; --bad-bg-5:#FEF0F0;
+    --bad-line:#EFB9B9; --bad-line-2:#E39C9C; --bad-line-3:#F87171; --bad-line-4:#F5C9C9;
+    --bad-ink:#B4241C; --bad-ink-2:#8F1A13;
+    --danger:#C0392B; --danger-hi:#A62F23;
+    /* 任务档位胶囊 */
+    --tst-b-bg:#E9EDF3; --tst-b-ink:#52606F;
+    --tst-a-bg:#DCF0EC; --tst-a-ink:#1E6B64;
+    --tst-s-bg:#D9E4F8; --tst-s-ink:#2A4A8C;
+    --tst-ss-bg:#E7DDF8; --tst-ss-ink:#55379B;
+    /* 五区：横红 · 竖橙 · 撇绿 · 点蓝 · 折紫（主色=字根填充，b=淡底） */
     --z1:#C0504D; --z1b:#FBEEED;
     --z2:#D08A1E; --z2b:#FDF3E3;
     --z3:#3E9E67; --z3b:#EDF7F1;
     --z4:#4A7FC8; --z4b:#EDF2FB;
     --z5:#7B5DB5; --z5b:#F2EEFA;
+
+    /* 简码 */
+    --jian-ink:#0E7C66; --jian-bg:#F3FAF7; --jian-line:#9CCFC0;
+    /* 遮罩 / 淡墨、滚条 */
+    --mask:rgba(16,24,40,.35);
+    --wash-1:rgba(28,42,66,.045); --wash-2:rgba(28,42,66,.055); --wash-3:rgba(28,42,66,.09);
+    --wash-4:rgba(28,42,66,.10); --wash-5:rgba(28,42,66,.13); --wash-6:rgba(28,42,66,.05);
+
+    /* 段位色带：每 5 级一档，一档 = 一个身份阶段 */
+    --lv1f:var(--ink2); --lv1b:#F1F2F4;
+    --lv2f:#4C6B82; --lv2b:#EDF2F6;
+    --lv3f:#2A66C4; --lv3b:#EDF3FD;
+    --lv4f:#0E7A6B; --lv4b:#E9F6F3;
+    --lv5f:#17804D; --lv5b:#EAF6EF;
+    --lv6f:#7A6A12; --lv6b:#F7F2DC;
+    --lv7f:#A66A0B; --lv7b:#FDF6E7;
+    --lv8f:#B4530F; --lv8b:#FDF0E8;
+    --lv9f:#C0286B; --lv9b:#FBECF3;
+    --lv10f:#EBC264; --lv10b:#2F2C26;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%}
@@ -64,7 +102,7 @@
     /* 斜向极淡渐变：纯白大屏看久了发花，铺一层几乎看不出的冷灰蓝，
        白色卡片反而有了「浮起来」的层次，也能压掉一部分眩光。 */
     background:var(--bg);
-    background-image:linear-gradient(158deg, #EEF2F9 0%, #DEE5F0 100%);
+    background-image:linear-gradient(158deg, var(--bg-1) 0%, var(--bg-2) 100%);
     background-attachment:fixed;
     color:var(--ink);
     font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",-apple-system,sans-serif;
@@ -91,15 +129,15 @@
   .hstats{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--ink2)}
   .hstats b{color:var(--ink);font-weight:600}
   .rankwrap{position:relative}
-  /* 胶囊原来靠 #F4F5F7 和背景拉开，底色一压暗两个色就贴住了，
+  /* 胶囊原来靠 var(--dim) 和背景拉开，底色一压暗两个色就贴住了，
      看着像没渲染出来的字。改成和卡片同色 + 1px 描边，边界由描边负责。 */
   .rank{
     display:inline-flex;align-items:center;gap:6px;
-    background:var(--card);border:1px solid #D5DDEA;border-radius:99px;padding:6px 12px;
+    background:var(--card);border:1px solid var(--line-4);border-radius:99px;padding:6px 12px;
     font-size:12px;color:var(--ink);cursor:pointer;font-family:inherit;
     transition:border-color .15s,background .15s;
   }
-  .rank:hover{background:#F0F4FA;border-color:#C6D0E2}
+  .rank:hover{background:var(--hover-5);border-color:var(--line-11)}
   .rank svg{opacity:.5;transition:transform .15s}
   .rank[aria-expanded="true"] svg{transform:rotate(180deg)}
   .rankmenu{
@@ -122,17 +160,17 @@
   /* 品级 / 考试层级的小标签：跟在名字后面，淡底细字，不抢名字 */
   .rrow .rtag{
     font-style:normal;margin-left:7px;padding:1px 5px;border-radius:4px;
-    font-size:10px;color:var(--ink3);background:rgba(28,42,66,.055);
+    font-size:10px;color:var(--ink3);background:var(--wash-2);
     letter-spacing:.02em;
   }
-  .rrow.cur .rtag{background:rgba(28,42,66,.09);color:var(--ink2)}
-  .rrow:hover{background:#F7F8FA}
-  .rrow.cur{background:#F1F3F6;color:var(--ink);font-weight:600}
+  .rrow.cur .rtag{background:var(--wash-3);color:var(--ink2)}
+  .rrow:hover{background:var(--hover)}
+  .rrow.cur{background:var(--chip);color:var(--ink);font-weight:600}
   .rrow.cur .need{color:var(--ink2);font-weight:600}
   /* 「当前」原本挂在 .rrow 上，成了 flex 的第三项，space-between 会把它
      和积分各分一半空隙，积分就被挤到中间。挂到左侧那组上才是三个元素两列布局。 */
   .rrow.cur .nm::after{
-    content:"当前";font-size:9px;color:#fff;background:var(--ink);
+    content:"当前";font-size:9px;color:var(--on-solid);background:var(--solid);
     border-radius:99px;padding:2px 6px;margin-left:6px;vertical-align:1.5px;
     font-weight:500;letter-spacing:.02em;
   }
@@ -157,11 +195,11 @@
   .taskpick{position:relative;flex:none}
   .taskbtn{
     display:inline-flex;align-items:center;gap:6px;
-    background:var(--card);border:1px solid #E1E4EA;border-radius:8px;padding:5px 10px;
+    background:var(--card);border:1px solid var(--line-2);border-radius:8px;padding:5px 10px;
     font-size:12.5px;color:var(--ink);cursor:pointer;font-family:inherit;white-space:nowrap;
     transition:border-color .15s,background .15s;
   }
-  .taskbtn:hover{border-color:#D2D7E0;background:#FBFBFC}
+  .taskbtn:hover{border-color:var(--line-6);background:var(--card-2)}
   .taskbtn svg{opacity:.5;transition:transform .15s}
   .taskbtn[aria-expanded="true"] svg{transform:rotate(180deg)}
   .taskmenu{
@@ -175,37 +213,37 @@
     display:flex;align-items:center;gap:8px;padding:7px 9px 7px 13px;border-radius:7px;
     font-size:12.5px;color:var(--ink2);cursor:pointer;
   }
-  .trow:hover{background:#F5F6F8;color:var(--ink)}
+  .trow:hover{background:var(--hover-2);color:var(--ink)}
   /* 选中行：淡蓝底 + 左侧一根独立竖条。
      不用 box-shadow inset 画，因为圆角会让那根「条」在两端弯成括号。 */
-  .trow.on{background:#E6EDFA;color:var(--ink)}
+  .trow.on{background:var(--sel-bg);color:var(--ink)}
   .trow.on::before{
     content:'';position:absolute;left:5px;top:6px;bottom:6px;width:3px;
     border-radius:2px;background:var(--accent);
   }
-  .trow.on .tn{color:#28466F}
+  .trow.on .tn{color:var(--sel-ink)}
   .trow .tn{font-weight:600;min-width:42px}
   .trow .tg{flex:1;font-size:11px;color:var(--ink3)}
-  .trow.on .tg{color:#63738C}
-  .trow .tp{font-family:Inter,sans-serif;font-size:11.5px;color:#2F7D51;font-weight:600}
+  .trow.on .tg{color:var(--sel-ink-2)}
+  .trow .tp{font-family:Inter,sans-serif;font-size:11.5px;color:var(--ok-ink-3);font-weight:600}
   /* 「1%」光看数字不知道是什么的百分比，前面挂一个小字「总分」——
      用的是顶栏那个词（总分），一眼能对上 */
   .trow .tp i{font-style:normal;font-weight:400;font-size:10.5px;color:var(--ink3);margin-right:2px}
-  .trow.on .tp i{color:#63738C}
+  .trow.on .tp i{color:var(--sel-ink-2)}
   /* 菜单底部一行：奖励按什么算。没有这句，「总分 1%」还是不知道乘在哪个数上 */
   .tmfoot{margin:2px 4px 1px;padding:6px 9px 2px;border-top:1px solid var(--line);
     font-size:10.5px;line-height:1.55;color:var(--ink3)}
-  .trow.on .tp{color:#22684A}
+  .trow.on .tp{color:var(--ok-ink-2)}
   .trow.got .tp::after{content:" ✓"}
   .status .tnum{font-family:Inter,sans-serif;font-size:12.5px;color:var(--ink2);white-space:nowrap;min-width:74px;text-align:right}
   .claimbtn{
-    flex:none;border:1px solid #B7E2C6;background:#EAF8EF;color:#1F7A46;
+    flex:none;border:1px solid var(--ok-line);background:var(--ok-bg);color:var(--ok-ink);
     border-radius:8px;padding:5px 11px;font-size:12.5px;font-weight:600;
     cursor:pointer;font-family:inherit;white-space:nowrap;
     transition:background .15s,border-color .15s,color .15s;
   }
-  .claimbtn:hover:not(:disabled){background:#DCF3E4;border-color:#9FD5B4}
-  .claimbtn:disabled{background:#F4F5F7;border-color:#E7E9EE;color:var(--ink4);cursor:default}
+  .claimbtn:hover:not(:disabled){background:var(--ok-bg-2);border-color:var(--ok-line-2)}
+  .claimbtn:disabled{background:var(--dim);border-color:var(--line-9);color:var(--ink4);cursor:default}
   .claimbtn.pulse{animation:claimPulse 1.8s ease-in-out infinite}
   @keyframes claimPulse{
     0%,100%{box-shadow:0 0 0 0 rgba(31,122,70,.20)}
@@ -226,7 +264,7 @@
   .taskbtn .emo{vertical-align:-1.5px}
   /* 顶栏各项之间一条竖线：比纯空格更能分组，又不增加噪音 */
   .hstats{gap:14px}
-  .hstats > span{padding-left:14px;border-left:1px solid #E4E7EE}
+  .hstats > span{padding-left:14px;border-left:1px solid var(--line-8);white-space:nowrap}
 
   /* ---------- 任务档位色 / 重置提示 / 等级色点 ---------- */
   /* 四档用「由弱到强」的四种底色：钢灰 → 青绿 → 金橙 → 朱红。
@@ -235,10 +273,10 @@
     display:inline-block;font-size:11px;font-weight:600;line-height:1.6;
     padding:1px 6px;border-radius:5px;letter-spacing:.02em;
   }
-  .tst.b {background:#E9EDF3;color:#52606F}   /* 石板灰（不带色相） */
-  .tst.a {background:#DCF0EC;color:#1E6B64}   /* 青 */
-  .tst.s {background:#D9E4F8;color:#2A4A8C}   /* 蓝 */
-  .tst.ss{background:#E7DDF8;color:#55379B}   /* 紫 */
+  .tst.b {background:var(--tst-b-bg);color:var(--tst-b-ink)}   /* 石板灰（不带色相） */
+  .tst.a {background:var(--tst-a-bg);color:var(--tst-a-ink)}   /* 青 */
+  .tst.s {background:var(--tst-s-bg);color:var(--tst-s-ink)}   /* 蓝 */
+  .tst.ss{background:var(--tst-ss-bg);color:var(--tst-ss-ink)}   /* 紫 */
 
   .status .treset{font-size:11px;color:var(--ink3);white-space:nowrap}
 
@@ -254,7 +292,7 @@
      和单字版同一套分块语言。 */
   aside .panel{
     --ac:var(--line);
-    border:1px solid #D4DCEA;border-left:3px solid var(--ac);
+    border:1px solid var(--line-5);border-left:3px solid var(--ac);
     box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 20px -10px rgba(16,24,40,.10);
   }
   aside .panel:nth-of-type(1){--ac:var(--accent)}        /* 积分：主题蓝 */
@@ -269,9 +307,9 @@
   /* 槽用半透明深色，不写死色值：状态行压在渐变背景上，写死一个灰
      在渐变的两端会一端太深、一端又看不见。 */
   .bar{
-    height:6px;border-radius:99px;background:rgba(28,42,66,.13);
+    height:6px;border-radius:99px;background:var(--wash-5);
     overflow:hidden;display:flex;gap:2px;
-    box-shadow:inset 0 0 0 1px rgba(28,42,66,.05);
+    box-shadow:inset 0 0 0 1px var(--wash-6);
   }
   .bar i{
     display:block;height:100%;border-radius:99px;
@@ -280,30 +318,30 @@
     background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 55%),var(--bar-task);
     transition:width .25s,background .2s;
   }
-  .bar i.full{background:#2F9E62}      /* 达标可领 */
-  .bar i.got{background:#B7E2C6}       /* 今天这档已经领过 */
+  .bar i.full{background:var(--bar-full)}      /* 达标可领 */
+  .bar i.got{background:var(--ok-line)}       /* 今天这档已经领过 */
   .card{
     background:var(--card);
     /* 底色压暗之后，卡片和背景只差 15 个色阶，只靠阴影「托」不住了。
        边框单独深一档（不跟着 --line），阴影分三层：贴边 1px 定边缘、
        3px 的近影表示有点厚度、20px 的远影表示离开背景的高度。 */
-    border:1px solid #CFD8E7;border-radius:18px;
+    border:1px solid var(--line-7);border-radius:18px;
     padding:24px 26px;display:flex;flex-direction:column;
     box-shadow:0 1px 2px rgba(16,24,40,.05),
                0 3px 12px rgba(16,24,40,.055),
                0 20px 44px -12px rgba(16,24,40,.15);
     min-height:336px;flex:1 1 auto;
   }
-  .card.bad{border-color:#F5C9C9}
+  .card.bad{border-color:var(--bad-line-4)}
   .tagrow{display:flex;justify-content:flex-end;align-items:center}
   .hintlink{
     font-size:11px;color:var(--ink2);cursor:pointer;user-select:none;
-    background:var(--card);border:1px solid #E1E4EA;border-radius:99px;padding:4px 11px;
+    background:var(--card);border:1px solid var(--line-2);border-radius:99px;padding:4px 11px;
     display:inline-flex;align-items:center;gap:5px;
     transition:background .15s,border-color .15s,color .15s;
   }
-  .hintlink:hover{background:#F7F8FA;border-color:#D6DAE2;color:var(--ink)}
-  .hintlink.off{color:var(--ink3);border-color:#EAEDF1}
+  .hintlink:hover{background:var(--hover);border-color:var(--line-3);color:var(--ink)}
+  .hintlink.off{color:var(--ink3);border-color:var(--line-10)}
   .hintlink i{font-style:normal;font-weight:600;color:var(--ink)}
   .hintlink.off i{color:var(--ink3)}
   .center{
@@ -321,10 +359,10 @@
     user-select:none;-webkit-user-select:none;pointer-events:none;
   }
   .char .glyph svg{width:112px;height:112px;display:block;overflow:visible}
-  .char .glyph svg path{fill:var(--glyph);stroke:none}
+  .char .glyph svg path{fill:var(--glyph-big);stroke:none}
   .char .glyph .gch{
     display:flex;align-items:center;justify-content:center;
-    width:112px;height:112px;font-size:104px;line-height:1;color:var(--glyph);
+    width:112px;height:112px;font-size:104px;line-height:1;color:var(--glyph-big);
     font-family:"PingFang SC","Hiragino Sans GB","Songti SC","Source Han Serif SC",serif;
   }
   .answerline{font-size:15px;color:var(--gc, var(--ink));font-weight:600;height:22px}
@@ -337,12 +375,12 @@
   .mnemonic em{font-style:normal;font-size:11px;color:var(--ink4);margin-left:6px}
   .slotrow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px}
   .slot{
-    width:52px;height:52px;border-radius:11px;border:1px solid #D6DAE2;background:#FBFBFC;
+    width:52px;height:52px;border-radius:11px;border:1px solid var(--line-3);background:var(--card-2);
     display:flex;align-items:center;justify-content:center;
     font-family:ui-monospace,Menlo,monospace;font-size:22px;font-weight:600;color:var(--ink);
   }
-  .slot.ok{border-color:var(--gc, var(--ok));background:#fff;color:var(--gc, var(--ok))}
-  .slot.bad{border-color:#F87171;background:#FEF2F2;color:var(--bad)}
+  .slot.ok{border-color:var(--gc, var(--ok));background:var(--card-3);color:var(--gc, var(--ok))}
+  .slot.bad{border-color:var(--bad-line-3);background:var(--bad-bg-4);color:var(--bad)}
   .slothint{font-size:12px;color:var(--ink3)}
   .kb{
     background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px 18px;
@@ -371,24 +409,24 @@
   .key.z3{background:var(--z3b);color:var(--z3)}
   .key.z4{background:var(--z4b);color:var(--z4)}
   .key.z5{background:var(--z5b);color:var(--z5)}
-  .key.dim{background:#F4F5F7;color:var(--ink3)}
-  .key.correct{background:var(--ok)!important;color:#fff!important;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
-  .key.wrong{background:#FEF0F0!important;color:var(--bad)!important;border-color:#F87171!important}
+  .key.dim{background:var(--dim);color:var(--ink3)}
+  .key.correct{background:var(--ok-fill)!important;color:var(--on-ok)!important;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
+  .key.wrong{background:var(--bad-bg-5)!important;color:var(--bad)!important;border-color:var(--bad-line-3)!important}
   aside{grid-column:2; grid-row:2; display:flex;flex-direction:column;gap:12px;min-height:0;overflow:auto}
   .panel{
     background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
     box-shadow:0 1px 6px rgba(16,24,40,.03),0 8px 20px -6px rgba(16,24,40,.04);
   }
-  .ptitle{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#8A919E;margin-bottom:12px}
+  .ptitle{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-3b);margin-bottom:12px}
   .ptitle b{font-weight:500;color:var(--ink)}
   .score{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:nowrap}
   .amt{display:flex;align-items:baseline;gap:4px;flex:0 0 auto}
   .amt strong{font-size:27px;font-weight:600;font-family:Inter,sans-serif;letter-spacing:-.01em;color:var(--ink)}
   .amt em{font-style:normal;font-size:12px;color:var(--ink3)}
   .track{
-    height:6px;border-radius:99px;background:rgba(28,42,66,.10);
+    height:6px;border-radius:99px;background:var(--wash-4);
     margin:10px 0 8px;overflow:hidden;
-    box-shadow:inset 0 0 0 1px rgba(28,42,66,.045);
+    box-shadow:inset 0 0 0 1px var(--wash-1);
   }
   /* 底色由 JS 按等级色写入，高级别会非常浅（l≈95），在浅卡上等于没有。
      这里加一圈中性描边，不管底色多浅都有边界。 */
@@ -396,8 +434,8 @@
     display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;
     border-radius:99px;padding:4px 10px;
     font-size:13px;font-weight:600;
-    background:#F1F2F4;color:#5F6673;
-    box-shadow:inset 0 0 0 1px rgba(28,42,66,.10);
+    background:var(--chip-2);color:var(--ink2);
+    box-shadow:inset 0 0 0 1px var(--wash-4);
   }
   .rankchip i{
     font-style:normal;font-family:Inter,sans-serif;font-size:10.5px;font-weight:600;
@@ -416,19 +454,19 @@
   /* 连击是这块面板里唯一「活」的数字，也是得分的因，所以给它一点颜色和大一档字号。
      三行因此有了主次：蓝（连击）→ 墨（现在每次得分）→ 墨（下一档）。
      只在 >0 时上色，归零压暗——断连击的那一刻，颜色掉下去本身就是提示。 */
-  /* 文字用的是主题蓝的「深一档」#4A6FA8 而不是 #5C82C6：
+  /* 文字用的是主题蓝的「深一档」var(--link) 而不是 #5C82C6：
      前者压在白卡上 4.96:1，后者只有 3.75:1。进度条是图形（3:1 就够），
      文字要 4.5:1，所以同色相取深档。 */
-  .row b.live{color:#4A6FA8;font-size:17px}
-  .row b.zero{color:#7C8493;font-weight:500;font-size:17px}
+  .row b.live{color:var(--link);font-size:17px}
+  .row b.zero{color:var(--ink-5);font-weight:500;font-size:17px}
   .row i{font-style:normal;color:var(--ink);font-weight:600}
   .resetlink{
-    width:100%;border:1px solid #EFB9B9;background:#FCE7E7;border-radius:9px;padding:8px;
-    font-size:12.5px;font-weight:500;color:#B4241C;cursor:pointer;font-family:inherit;
+    width:100%;border:1px solid var(--bad-line);background:var(--bad-bg);border-radius:9px;padding:8px;
+    font-size:12.5px;font-weight:500;color:var(--bad-ink);cursor:pointer;font-family:inherit;
     transition:background .15s,border-color .15s,color .15s;
   }
-  .resetlink:hover{background:#F8D2D2;border-color:#E39C9C;color:#8F1A13}
-  .resetlink:active{background:#F3C2C2}
+  .resetlink:hover{background:var(--bad-bg-2);border-color:var(--bad-line-2);color:var(--bad-ink-2)}
+  .resetlink:active{background:var(--bad-bg-3)}
   .backuprow{
     display:flex;align-items:center;justify-content:center;gap:6px;
     margin-top:-6px;                       /* 贴紧重置按钮，同时给矮窗口省出高度 */
@@ -447,7 +485,7 @@
      若各自当 flex 项，「小字跟大字对齐」会变成「盒子居中」，看起来飘。 */
   .btitle{white-space:nowrap}
   .ver{
-    font-size:11px;color:#8A919E;font-weight:400;font-family:Inter,sans-serif;
+    font-size:11px;color:var(--ink-3b);font-weight:400;font-family:Inter,sans-serif;
     letter-spacing:.03em;white-space:nowrap;user-select:none;margin-left:9px;
   }
   /* ---------- 顶栏「使用说明」 ---------- */
@@ -458,7 +496,7 @@
     cursor:pointer;font-family:inherit;line-height:1.4;
     transition:background .12s,border-color .12s,color .12s;
   }
-  .helplink:hover{background:#F5F6F8;border-color:#D6DAE2;color:var(--ink)}
+  .helplink:hover{background:var(--hover-2);border-color:var(--line-3);color:var(--ink)}
   .helplink svg{flex:none;opacity:.5}
   .helplink:hover svg{opacity:.85}
   .helplink:focus{outline:none}
@@ -468,9 +506,9 @@
   .dlghelp{
     border:none;padding:0;background:var(--card);border-radius:16px;
     width:min(600px,92vw);max-height:min(84vh,720px);
-    box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
+    box-shadow:0 24px 60px -12px var(--mask);
   }
-  .dlghelp::backdrop{background:rgba(16,24,40,.35)}
+  .dlghelp::backdrop{background:var(--mask)}
   .dlghelp .dlgbody{
     padding:18px 22px 16px;display:flex;flex-direction:column;
     max-height:min(84vh,720px);
@@ -481,17 +519,17 @@
     margin-left:auto;border:none;background:none;cursor:pointer;
     font-size:14px;color:var(--ink3);padding:2px 5px;line-height:1;border-radius:6px;
   }
-  .hpclose:hover{background:#F1F3F6;color:var(--ink)}
+  .hpclose:hover{background:var(--chip);color:var(--ink)}
   .hpclose:focus{outline:none}
   /* 弹窗一打开焦点就落在这个 ✕ 上；用浅底表示焦点，别描边——描了像个带框按钮 */
-  .hpclose:focus-visible{background:#F1F3F6;color:var(--ink)}
+  .hpclose:focus-visible{background:var(--chip);color:var(--ink)}
   /* 内容区独立滚动：标题固定，长内容不会把弹窗撑出屏幕 */
   .hpscroll{overflow-y:auto;min-height:0;padding-right:6px;overscroll-behavior:contain;outline:none}
   /* macOS 的滚动条不滚就不显示，用户会以为内容就到这儿了。这里让它常驻，颜色压到很淡。 */
   .hpscroll::-webkit-scrollbar{width:7px}
   .hpscroll::-webkit-scrollbar-track{background:transparent}
-  .hpscroll::-webkit-scrollbar-thumb{background:#CDD3DB;border-radius:4px}
-  .hpscroll:hover::-webkit-scrollbar-thumb{background:#B4BBC6}
+  .hpscroll::-webkit-scrollbar-thumb{background:var(--scroll);border-radius:4px}
+  .hpscroll:hover::-webkit-scrollbar-thumb{background:var(--scroll-hi)}
   .hp-sec{margin-bottom:14px}
   .hp-sec:last-child{margin-bottom:2px}
   .hp-h{
@@ -499,7 +537,7 @@
     font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:5px;
   }
   .hp-h i{
-    font-style:normal;font-size:10px;font-weight:600;color:#fff;background:var(--ink);
+    font-style:normal;font-size:10px;font-weight:600;color:var(--on-solid);background:var(--solid);
     width:16px;height:16px;border-radius:5px;flex:none;
     display:inline-flex;align-items:center;justify-content:center;
     font-family:Inter,sans-serif;
@@ -512,10 +550,10 @@
   /* 说明里的链接（来源、许可、仓库）不能和正文一个颜色：
      这些链接是要给人点开核对的，看得见才算数。用连击那个深一档的主题蓝，
      和其它正文保持同一族，不引入新颜色。 */
-  .hp-sec a{color:#4A6FA8;text-decoration:none;border-bottom:1px solid #C3D0E4}
-  .hp-sec a:hover{color:#2F4E7A;border-bottom-color:#8FA6C6}
+  .hp-sec a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--link-line)}
+  .hp-sec a:hover{color:var(--link-hi);border-bottom-color:var(--link-line-hi)}
   .hp-tag{
-    display:inline-block;padding:0 4px;border-radius:4px;background:#F1F3F6;
+    display:inline-block;padding:0 4px;border-radius:4px;background:var(--chip);
     font-family:Inter,sans-serif;font-size:11.5px;color:var(--ink);
     font-weight:500;white-space:nowrap;
   }
@@ -524,9 +562,9 @@
   .dlgask{
     border:none;padding:0;background:var(--card);border-radius:16px;
     width:min(420px,92vw);
-    box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
+    box-shadow:0 24px 60px -12px var(--mask);
   }
-  .dlgask::backdrop{background:rgba(16,24,40,.35)}
+  .dlgask::backdrop{background:var(--mask)}
   .dlgask .dlgbody{padding:20px 20px 16px;display:flex;flex-direction:column;gap:10px}
   .asktitle{font-size:15px;font-weight:600;color:var(--ink)}
   .askmsg{font-size:12.5px;color:var(--ink2);line-height:1.78;white-space:pre-line}
@@ -536,22 +574,22 @@
     padding:7px 16px;font-size:12.5px;color:var(--ink2);cursor:pointer;
     font-family:inherit;transition:background .12s,border-color .12s,color .12s;
   }
-  .askbtn:hover{background:#F5F6F8;color:var(--ink)}
+  .askbtn:hover{background:var(--hover-2);color:var(--ink)}
   .askbtn:focus{outline:none}
-  .askbtn:focus-visible{outline:1.5px solid #B6BCC7;outline-offset:1px}
-  .askbtn.pri{background:var(--ink);border-color:var(--ink);color:#fff}
-  .askbtn.pri:hover{background:#2A2E37;border-color:#2A2E37;color:#fff}
+  .askbtn:focus-visible{outline:1.5px solid var(--line-13);outline-offset:1px}
+  .askbtn.pri{background:var(--solid);border-color:var(--solid);color:var(--on-solid)}
+  .askbtn.pri:hover{background:var(--solid-hi);border-color:var(--solid-hi);color:var(--on-solid)}
   /* 危险操作的主按钮：黑底会被 .pri 抢走，红字压在黑底上读不出来，所以反过来红底白字 */
-  .askbtn.pri.danger{background:#C0392B;border-color:#C0392B;color:#fff}
-  .askbtn.pri.danger:hover{background:#A62F23;border-color:#A62F23;color:#fff}
+  .askbtn.pri.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+  .askbtn.pri.danger:hover{background:var(--danger-hi);border-color:var(--danger-hi);color:#fff}
 
   /* ---------- 键盘速查弹窗 ---------- */
   .dlgkb{
     border:none;padding:0;background:var(--card);border-radius:16px;
     width:auto;max-width:min(560px,94vw);
-    box-shadow:0 24px 60px -12px rgba(16,24,40,.35);
+    box-shadow:0 24px 60px -12px var(--mask);
   }
-  .dlgkb::backdrop{background:rgba(16,24,40,.35)}
+  .dlgkb::backdrop{background:var(--mask)}
   .dlgkb .dlgbody{padding:16px 18px 14px;display:flex;flex-direction:column;gap:8px}
   .kbhead{display:flex;align-items:baseline;gap:9px}
   /* 字母和键名贴成一个整体：读起来是「D 大」这一个是哪一键，而不是两条并列信息 */
@@ -570,10 +608,10 @@
     margin-left:auto;border:none;background:none;cursor:pointer;
     font-size:14px;color:var(--ink3);padding:2px 5px;line-height:1;border-radius:6px;
   }
-  .kbclose:hover{background:#F1F3F6;color:var(--ink)}
+  .kbclose:hover{background:var(--chip);color:var(--ink)}
   /* 弹窗一打开焦点就落在关闭键上，浏览器默认那圈红环太扎眼，换中性色 */
   .kbclose:focus{outline:none}
-  .kbclose:focus-visible{background:#F1F3F6;color:var(--ink)}
+  .kbclose:focus-visible{background:var(--chip);color:var(--ink)}
   .kbmn{font-size:12.5px;color:var(--ink2);line-height:1.6}
   .kbgrid{
     display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;
@@ -595,15 +633,15 @@
      比区色里的绿（#3E9E67）更深更冷，不会和 3 区的边框撞成一片。
      只在速查面板里用，题面那格永远是黑的。 */
   .kbi.jian{
-    border-style:dashed;border-color:#9CCFC0;background:#F3FAF7;
+    border-style:dashed;border-color:var(--jian-line);background:var(--jian-bg);
   }
-  .kbi.jian .gch{color:#0E7C66}
-  .kbi.jian i{color:#0E7C66;font-weight:600;letter-spacing:.04em}
+  .kbi.jian .gch{color:var(--jian-ink)}
+  .kbi.jian i{color:var(--jian-ink);font-weight:600;letter-spacing:.04em}
   .kbnote{font-size:11px;color:var(--ink3);text-align:right;min-height:14px}
 
   .toast{
     position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(10px);
-    background:var(--ink);color:#fff;font-size:12px;padding:9px 16px;border-radius:99px;
+    background:var(--solid);color:var(--on-solid);font-size:12px;padding:9px 16px;border-radius:99px;
     opacity:0;transition:.2s;pointer-events:none;
   }
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -715,12 +753,106 @@
     .key{height:42px}
     .kb{padding:12px 20px 14px}
   }
+
+  /* ================= 深色主题 =================
+     只换变量，不改规则。深色下不靠阴影分层（暗底上阴影不显影），
+     靠「卡片比背景亮一档 + 描边」把层次做出来。 */
+  html[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#0E1218; --bg-1:#131922; --bg-2:#090C12;
+    --card:#171C24; --card-2:#1B2029; --card-3:#1D232C;
+    --hover:#1F252F; --hover-2:#1E242D; --hover-5:#1F252F;
+    --chip:#232A34; --chip-2:#242B36; --dim:#1C222B;
+    --line:#262D38; --line-2:#333B48; --line-3:#2E3541; --line-4:#2F3744; --line-5:#303845;
+    --line-6:#2C333F; --line-7:#333B49; --line-8:#2A313C; --line-9:#282F3A; --line-10:#252B35;
+    --line-11:#333B49; --line-13:#4A5464;
+    --scroll:#3A4250; --scroll-hi:#4A5464;
+    --ink:#E9ECF2; --ink2:#AEB7C6; --ink3:#949EAD; --ink-3b:#9AA3B2; --ink4:#848EA0; --ink-5:#96A0B0;
+    --glyph:#E6EBF4;
+    --glyph-big:#C4CEDD;
+    --accent:#7CA4E8; --accent-teal:#4FB3AD; --accent-slate:#8D9AAB;
+    --link:#8FB3E8; --link-hi:#B4CCF5; --link-line:#3A4A63; --link-line-hi:#55698A;
+    --sel-bg:#1D2A42; --sel-ink:#BCD3F5; --sel-ink-2:#93A5BF;
+    --solid:#DDE3EC; --solid-hi:#F0F3F8; --on-solid:#12161C;
+    --ok:#4ADE80; --ok-fill:#1F7A46; --on-ok:#E7FBEE;
+    --ok-bg:#14291D; --ok-bg-2:#193A26;
+    --ok-line:#2C5740; --ok-line-2:#357049;
+    --ok-ink:#5FD68F; --ok-ink-2:#8BE0AC; --ok-ink-3:#6FD09A;
+    --bar-full:#3FBE7A;
+    --bad:#F87171;
+    --bad-bg:#2A1616; --bad-bg-2:#3A1C1C; --bad-bg-3:#45201F; --bad-bg-4:#2B1718; --bad-bg-5:#2E1717;
+    --bad-line:#5A2A2A; --bad-line-2:#6E3535; --bad-line-3:#A34747; --bad-line-4:#6B3A3A;
+    --bad-ink:#F08A82; --bad-ink-2:#FFB4AC;
+    --danger:#B93A2E; --danger-hi:#A03026;
+    --tst-b-bg:#252B35; --tst-b-ink:#B9C3D2;
+    --tst-a-bg:#152A28; --tst-a-ink:#7FD4C9;
+    --tst-s-bg:#182338; --tst-s-ink:#9CBBEF;
+    --tst-ss-bg:#241C34; --tst-ss-ink:#C3A9F0;
+    /* 五区在暗底上要提亮：原色亮度不够，和小字混在一起会糊；淡底反过来压成深调 */
+    --z1:#EC8A86; --z1b:#2B1D1E;
+    --z2:#E8A951; --z2b:#2C2418;
+    --z3:#6FD09A; --z3b:#172A20;
+    --z4:#83AAEE; --z4b:#18202E;
+    --z5:#B79BEA; --z5b:#221D2E;
+
+    --jian-ink:#6FD3C4; --jian-bg:#162A28; --jian-line:#2F5E56;
+    --mask:rgba(0,0,0,.62);
+    --wash-1:rgba(255,255,255,.05); --wash-2:rgba(255,255,255,.07); --wash-3:rgba(255,255,255,.10);
+    --wash-4:rgba(255,255,255,.09); --wash-5:rgba(255,255,255,.13); --wash-6:rgba(255,255,255,.06);
+
+    --lv1f:#B7BFCC; --lv1b:#262C36;
+    --lv2f:#9DBAD2; --lv2b:#1C2530;
+    --lv3f:#8FB6F2; --lv3b:#17233A;
+    --lv4f:#6FD3C4; --lv4b:#142A28;
+    --lv5f:#74D69C; --lv5b:#16291F;
+    --lv6f:#D6C062; --lv6b:#292517;
+    --lv7f:#E5B45C; --lv7b:#2C2417;
+    --lv8f:#F0A070; --lv8b:#2E211A;
+    --lv9f:#F287B3; --lv9b:#2D1B24;
+    --lv10f:#F0CE7E; --lv10b:#2F2C26;
+  }
+  html[data-theme="dark"] .rankmenu, html[data-theme="dark"] .taskmenu,
+  html[data-theme="dark"] .dlghelp,
+  html[data-theme="dark"] .dlgask, html[data-theme="dark"] .dlgkb{
+    box-shadow:0 18px 44px -12px rgba(0,0,0,.72);
+  }
+  /* 顶栏两个新按钮与另一版的跳转；窄屏只留图标 */
+  .icobox{display:inline-flex;align-items:center;flex:none}
+  /* 主题按钮只有图标、没有文字兜底：再沿用 .helplink 的 .5 就淡到认不出是太阳还是月亮 */
+  #btnTheme .icobox svg{opacity:.78}
+  #btnTheme:hover .icobox svg{opacity:1}.linkico{flex:none}
+  .helplink{text-decoration:none}
+  .helplink .lb2{white-space:nowrap}
+  @media (max-width:820px){
+    .hstats{gap:10px}
+    .hstats .helplink{padding:5px 8px}
+    .hstats .helplink .lb2{display:none}
+  }
+  /* 700 以下顶栏换两行：品牌一行，统计与按钮一行。
+     一行时余量不到 10px，再往下压只是把「总分 123 分」挤成两截，不如换行。 */
+  @media (max-width:700px){
+    header{height:auto;flex:0 0 auto;flex-wrap:wrap;padding:8px 14px;row-gap:4px}
+    .hstats{flex:1 1 100%;flex-wrap:wrap;justify-content:space-between;gap:6px 14px}
+    .hstats > span{padding-left:0;border-left:none}
+  }
 </style>
+<script>
+/* 首屏前定主题：等 JS 跑完再切，浅色会先闪一下 */
+try{
+  var _tp = localStorage.getItem('wubi-theme');
+  if(_tp !== 'light' && _tp !== 'dark'){
+    _tp = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', _tp);
+}catch(e){}
+</script>
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.23</span></span></div>
+  <div class="brand"><div class="logo" role="img" aria-label="五笔字根"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lgBg" x1="0" y1="0" x2=".62" y2="1"><stop offset="0" stop-color="#414E6B"/><stop offset="1" stop-color="#232A3A"/></linearGradient><clipPath id="lgClip"><rect width="32" height="32" rx="7.5"/></clipPath></defs><rect width="32" height="32" rx="7.5" fill="url(#lgBg)"/><g clip-path="url(#lgClip)"><rect x="0" y="28.8" width="6.4" height="3.2" fill="#C0504D"/><rect x="6.4" y="28.8" width="6.4" height="3.2" fill="#D08A1E"/><rect x="12.8" y="28.8" width="6.4" height="3.2" fill="#3E9E67"/><rect x="19.2" y="28.8" width="6.4" height="3.2" fill="#4A7FC8"/><rect x="25.6" y="28.8" width="6.4" height="3.2" fill="#7B5DB5"/></g><path d="M10.16 12.21V13.85H13.39L12.27 19.15H8.72V20.8H23.28V19.15H20.78V12.21H15.43L16.15 8.84H22.66V7.2H9.32V8.84H14.44L13.73 12.21H10.16ZM13.97 19.15 15.09 13.85H19.06V19.15H13.97Z" fill="#FAFBFE"/></svg></div><span class="btitle">五笔字根 · 86 版<span class="ver">v1.1.27</span></span></div>
   <div class="hstats">
+    <button class="helplink" id="btnTheme" type="button" title="切换主题"><span class="icobox" id="themeIco"></span></button>
+    <a class="helplink" id="toTool" href="https://snihqi.github.io/wubi86-danzi/" title="另一个工具：五笔单字练习" target="_blank" rel="noopener"><span class="lb2">单字练习</span><svg class="linkico" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M3.4 2.4h6.2v6.2M9.6 2.4L2.4 9.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <div class="rankwrap">
       <button class="rank" id="rankBtn" type="button" aria-haspopup="true" aria-expanded="false">
         <span id="hRankText">Lv1 白身</span>
@@ -730,7 +862,7 @@
     </div>
     <span><i class="emo">💰</i>总分 <b id="hPoints">0</b> 分</span>
     <span class="streak" title="当天完成一次 B 级任务算签到一天"><i class="emo">🔥</i>连续 <b id="hStreak">0</b> 天<span class="best" id="hBest"></span></span>
-    <button class="helplink" id="btnHelp" type="button" title="使用说明（快捷键 ?）"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="8" cy="8" r="6.55" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.2 6.3a1.85 1.85 0 113.05 1.45c-.55.45-.95.78-.95 1.5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="8.3" cy="11.5" r=".9" fill="currentColor"/></svg>使用说明</button>
+    <button class="helplink" id="btnHelp" type="button" title="使用说明（快捷键 ?）"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="8" cy="8" r="6.55" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.2 6.3a1.85 1.85 0 113.05 1.45c-.55.45-.95.78-.95 1.5" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/><circle cx="8.3" cy="11.5" r=".9" fill="currentColor"/></svg><span class="lb2">使用说明</span></button>
       </div>
 </header>
 
@@ -825,6 +957,7 @@
           <li>按字根所在的字母键。第一次遇到和刚打错的，会直接给出键位与口诀。</li>
           <li>打错不换题，打对才往后走。Z 是万能键，不判题，也不影响分数与连击。</li>
           <li>点键盘上任意键位，可查该键的全部字根与简码。</li>
+          <li>右上角的太阳／月亮图标切换浅色、深色，旁边跳到<b>五笔单字练习</b>；主题两个工具共用。</li>
         </ul>
       </section>
 
@@ -847,7 +980,7 @@
       <section class="hp-sec">
         <div class="hp-h"><i>5</i>存档</div>
         <p>进度自动存在浏览器本地。换设备用「导出进度」存成 json，在新环境「导入进度」恢复。
-           清除浏览器数据会丢进度。</p>
+           导出文件名带工具名，和单字版的进度不会混。清除浏览器数据会丢进度。</p>
       </section>
 
       <section class="hp-sec">
@@ -939,7 +1072,6 @@ const YIJIAN = {
   n:'民', b:'了', v:'发', c:'以', x:'经'
 };
 
-
 /* ---------- 算法参数 ----------
    位置表与连击阶梯的取值，参照虎码练习器公开的练习规则（同一套间隔重复思路），
    代码是照 328 题规模重写的，没有引入对方任何代码。 */
@@ -1028,20 +1160,20 @@ function rankProgress(p){
 
 /* 等级配色：每 5 级换一次，一个色带 = 一个身份阶段；最后一档墨底金字（首辅） */
 const LV_TINT = [
-  [6,  '#5F6673', '#F1F2F4'],   // Lv1–5     灰
-  [11, '#4C6B82', '#EDF2F6'],   // Lv6–10    石板青
-  [16, '#2A66C4', '#EDF3FD'],   // Lv11–15   蓝
-  [21, '#0E7A6B', '#E9F6F3'],   // Lv16–20   青绿
-  [26, '#17804D', '#EAF6EF'],   // Lv21–25   绿
-  [31, '#7A6A12', '#F7F2DC'],   // Lv26–30   橄榄
-  [36, '#A66A0B', '#FDF6E7'],   // Lv31–35   金
-  [41, '#B4530F', '#FDF0E8'],   // Lv36–40   橙
-  [46, '#C0286B', '#FBECF3'],   // Lv41–45   玫红
-  [999,'#EBC264', '#2F2C26'],   // Lv46–50   墨底金字
+  [6,  'var(--lv1f)',  'var(--lv1b)'],   // Lv1–5     灰
+  [11, 'var(--lv2f)',  'var(--lv2b)'],   // Lv6–10    石板青
+  [16, 'var(--lv3f)',  'var(--lv3b)'],   // Lv11–15   蓝
+  [21, 'var(--lv4f)',  'var(--lv4b)'],   // Lv16–20   青绿
+  [26, 'var(--lv5f)',  'var(--lv5b)'],   // Lv21–25   绿
+  [31, 'var(--lv6f)',  'var(--lv6b)'],   // Lv26–30   橄榄
+  [36, 'var(--lv7f)',  'var(--lv7b)'],   // Lv31–35   金
+  [41, 'var(--lv8f)',  'var(--lv8b)'],   // Lv36–40   橙
+  [46, 'var(--lv9f)',  'var(--lv9b)'],   // Lv41–45   玫红
+  [999,'var(--lv10f)', 'var(--lv10b)'],  // Lv46–50   墨底金字
 ];
 function tintOf(lv){
   for(const [max, fg, bg] of LV_TINT) if(lv < max) return [fg, bg];
-  return ['#EBC264', '#2F2C26'];
+  return ['var(--lv10f)', 'var(--lv10b)'];
 }
 
 /* 积分缩写：一万以下原样，之上用「万 / 亿」，最多两位小数并去掉末尾 0
@@ -1367,6 +1499,63 @@ function answer(key){
 
 /* ---------- 渲染 ---------- */
 const $ = id => document.getElementById(id);
+
+/* ---------- 主题：浅色 / 深色 ----------
+   所有色值在 :root 与 html[data-theme="dark"] 里，这里只管切换与记忆。
+   偏好存在 wubi-theme：两版同站点，换工具不用再设一次。
+   没存过偏好时按系统的初始偏好来（不写进存储）；用户点过之后就是明确二选一，
+   不再跟系统走——留个「跟随系统」的第三态只会让人每次点击都要多按一下。 */
+const THEME_KEY = 'wubi-theme';
+const THEME_TX  = { light:'浅色', dark:'深色' };
+const THEME_ICO = {
+  light: '<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.3v1.6M8 13.1v1.6M1.3 8h1.6M13.1 8h1.6M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M12.7 3.3l-1.1 1.1M4.4 11.6l-1.1 1.1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  dark:  '<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M13.2 9.7A5.7 5.7 0 016.3 2.8a5.7 5.7 0 106.9 6.9z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>'
+};
+
+function systemDark(){
+  return !!(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+}
+/* 只认 light / dark。旧版存过 'auto' 的、或存了脏值的，一律当「没选过」 */
+function themeStored(){
+  try{
+    const v = localStorage.getItem(THEME_KEY);
+    return (v === 'light' || v === 'dark') ? v : '';
+  }catch(e){ return ''; }
+}
+function themeGet(){
+  return themeStored() || (systemDark() ? 'dark' : 'light');
+}
+function themeApply(t){
+  const dark = t === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const b = $('btnTheme');
+  if(!b) return;
+  /* 图标画的是「当前状态」：太阳＝浅色，月亮＝深色。
+     title 里把下一步也说出来，省得有人猜这个按钮是干嘛的。 */
+  $('themeIco').innerHTML = THEME_ICO[dark ? 'dark' : 'light'];
+  b.title = '当前' + THEME_TX[dark ? 'dark' : 'light'] + '，点击切换' + THEME_TX[dark ? 'light' : 'dark'];
+  b.setAttribute('aria-label', '切换主题，当前' + THEME_TX[dark ? 'dark' : 'light']);
+  b.setAttribute('aria-pressed', dark ? 'true' : 'false');
+}
+function initTheme(){
+  themeApply(themeGet());
+  /* 绑定只做一次：重复调用 initTheme 不该叠加监听器（否则一次点击跳两档） */
+  const b = $('btnTheme');
+  if(b && !b.dataset.themeBound){
+    b.dataset.themeBound = '1';
+    b.addEventListener('click', () => {
+      const next = themeGet() === 'dark' ? 'light' : 'dark';
+      try{ localStorage.setItem(THEME_KEY, next); }catch(e){}
+      themeApply(next);
+    });
+    /* 还没手动选过时，系统主题中途变了仍然跟一下；选过之后就固定 */
+    const mq = window.matchMedia && matchMedia('(prefers-color-scheme: dark)');
+    if(mq && mq.addEventListener){
+      mq.addEventListener('change', () => { if(!themeStored()) themeApply(themeGet()); });
+    }
+  }
+}
+
 let breakTimer = null, breakActive = false;  // 「连击断了」提示的定时器与状态（render 会读 breakActive）
 
 function renderKeyboard(){
@@ -1747,7 +1936,7 @@ function exportProgress(){
   const stamp = d.getFullYear()
     + String(d.getMonth() + 1).padStart(2, '0')
     + String(d.getDate()).padStart(2, '0');
-  const name = '五笔字根进度_' + stamp + '.json';
+  const name = '五笔字根练习_进度_' + stamp + '.json';
 
   try{
     const blob = new Blob([JSON.stringify(pack, null, 1)], {type:'application/json'});
@@ -1772,6 +1961,15 @@ async function importPayload(text){
   let pack = null;
   try{ pack = JSON.parse(String(text)); }
   catch(e){ toast('导入失败：文件不是有效的 JSON'); return false; }
+
+  /* 两版的导出文件都叫 *.json，导错是常事。app 字段一直写着却没人验，
+     与其让人对着「不是这个工具的进度文件」猜，不如直接点名该去哪导。 */
+  if(pack && pack.app && pack.app !== BACKUP_APP){
+    const want = String(pack.app).indexOf('单字') >= 0 ? '五笔单字练习'
+               : String(pack.app).indexOf('字根') >= 0 ? '五笔字根练习' : '';
+    toast('导入失败：这是「' + pack.app + '」的进度' + (want ? '，请到「' + want + '」页面导入' : ''));
+    return false;
+  }
 
   const data = (pack && pack.data) ? pack.data : pack;      // 也接受裸存档
   if(!data || !Array.isArray(data.order) || !Array.isArray(data.counts)){
@@ -1999,6 +2197,7 @@ document.addEventListener('keydown', e=>{ if(e.key === 'Escape') setRankMenu(fal
    裸调一次就白屏，所以这里必须兜住：读不到就当第一次来。 */
 let firstVisit = true;
 try{ firstVisit = localStorage.getItem(SAVE_KEY) === null; }catch(e){ firstVisit = true; }
+initTheme();
 load();
 ensureToday();
 renderKeyboard();
